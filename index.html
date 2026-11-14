@@ -1,0 +1,1340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Galih Wahyu Nugroho Portfolio</title>
+<meta name="description" content="Portfolio of Galih Wahyu Nugroho, D4 Electrical Automation Engineering student at ITS: electrical installation, control systems and EV conversion.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script>try{if(!matchMedia('(prefers-reduced-motion: reduce)').matches&&'IntersectionObserver' in window)document.documentElement.classList.add('mo')}catch(e){}</script>
+<style>
+/* Direction: Liquid Glass, as refined in iOS 27. Translucent rounded surfaces over a soft wallpaper, system blue, capsule controls, grouped lists, and a user-adjustable glass strength. */
+:root{
+  --bg:#eef1f8;
+  --w1:rgba(110,165,255,.55);--w2:rgba(205,150,255,.45);--w3:rgba(255,190,150,.42);
+  --glass-rgb:255,255,255;--ga:.64;--gb:26px;
+  --edge:rgba(255,255,255,.8);
+  --shadow:inset 0 1px 0 rgba(255,255,255,.7),0 12px 36px rgba(30,45,90,.10);
+  --label:#1c1c1e;--label2:#55555c;--hair:rgba(60,60,67,.16);
+  --fill:rgba(120,120,128,.12);
+  --blue:#0071e3;--blue-text:#0062c4;--tint:rgba(0,113,227,.12);
+  --green:#1f9d55;--green-glow:#30d158;
+  --orange-text:#935000;--orange-tint:rgba(255,159,10,.18);
+  --seg-on:#fff;
+  --r:28px;
+  --font:-apple-system,BlinkMacSystemFont,"SF Pro Display","SF Pro Text","Inter",system-ui,"Segoe UI",sans-serif;
+  color-scheme:light;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#07080f;--w1:rgba(40,85,205,.45);--w2:rgba(125,55,195,.40);--w3:rgba(20,115,145,.30);
+    --glass-rgb:46,48,64;--edge:rgba(255,255,255,.15);
+    --shadow:inset 0 1px 0 rgba(255,255,255,.12),0 14px 40px rgba(0,0,0,.35);
+    --label:#f5f5f7;--label2:#aaaab5;--hair:rgba(235,235,245,.16);--fill:rgba(255,255,255,.10);
+    --blue:#0a6fe0;--blue-text:#6cb6ff;--tint:rgba(10,132,255,.22);--green:#3ecf80;
+    --orange-text:#ffb340;--orange-tint:rgba(255,159,10,.22);--seg-on:rgba(255,255,255,.2);color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#07080f;--w1:rgba(40,85,205,.45);--w2:rgba(125,55,195,.40);--w3:rgba(20,115,145,.30);
+  --glass-rgb:46,48,64;--edge:rgba(255,255,255,.15);
+  --shadow:inset 0 1px 0 rgba(255,255,255,.12),0 14px 40px rgba(0,0,0,.35);
+  --label:#f5f5f7;--label2:#aaaab5;--hair:rgba(235,235,245,.16);--fill:rgba(255,255,255,.10);
+  --blue:#0a6fe0;--blue-text:#6cb6ff;--tint:rgba(10,132,255,.22);--green:#3ecf80;
+  --orange-text:#ffb340;--orange-tint:rgba(255,159,10,.22);--seg-on:rgba(255,255,255,.2);color-scheme:dark;
+}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:92px}
+@media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}}
+body{margin:0;background:var(--bg);color:var(--label);font:400 17px/1.5 var(--font);letter-spacing:-.011em;-webkit-font-smoothing:antialiased;font-variant-numeric:tabular-nums}
+body::before{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;background:
+  radial-gradient(62vw 52vh at 8% 0%,var(--w1),transparent 70%),
+  radial-gradient(56vw 56vh at 96% 12%,var(--w2),transparent 70%),
+  radial-gradient(72vw 62vh at 48% 100%,var(--w3),transparent 70%)}
+img{max-width:100%;display:block}
+h1,h2,h3,h4{margin:0;text-wrap:balance}
+p{margin:0}
+a{color:var(--blue-text);text-decoration:none}
+a:hover{text-decoration:underline;text-underline-offset:3px}
+:focus-visible{outline:3px solid var(--blue);outline-offset:2px}
+button{font-family:inherit}
+.wrap{max-width:1160px;margin:0 auto;padding:0 20px}
+.mono{font-variant-numeric:tabular-nums}
+.muted{color:var(--label2)}
+.num{font-variant-numeric:tabular-nums}
+
+/* ---------- glass surfaces ---------- */
+.top .wrap,.pnl,.meter,.xp,.log,.pj-list,.pj-panel,.mx,.dtable,.plate-row,.cert,.feat,.orgs article,.idcard,.nameplate,.status,.contact .sbody,.gl,#to-top,.cm figure{
+  background:rgba(var(--glass-rgb),var(--ga));
+  -webkit-backdrop-filter:blur(var(--gb)) saturate(1.7);backdrop-filter:blur(var(--gb)) saturate(1.7);
+  border:1px solid var(--edge);box-shadow:var(--shadow);
+}
+@supports not ((backdrop-filter:blur(2px)) or (-webkit-backdrop-filter:blur(2px))){
+  :root{--ga:.94}
+}
+@media (prefers-reduced-transparency: reduce){
+  :root{--ga:.97}
+  .top .wrap,.pnl,.meter,.xp,.log,.pj-list,.pj-panel,.mx,.dtable,.plate-row,.cert,.feat,.orgs article,.idcard,.nameplate,.status,.contact .sbody,.gl,#to-top,.cm figure{-webkit-backdrop-filter:none;backdrop-filter:none}
+}
+
+/* ---------- TOP BAR ---------- */
+.top{position:sticky;top:12px;z-index:50;padding:0 12px}
+.top .wrap{display:flex;align-items:center;gap:10px;height:60px;padding:0 8px;border-radius:999px;max-width:1140px}
+.brand{display:flex;align-items:center;gap:10px;flex:none;color:var(--label)}
+.brand:hover{text-decoration:none}
+.plate{display:grid;place-items:center;width:44px;height:44px;border-radius:15px;background:linear-gradient(145deg,#4aa3ff,#5e5ce6 60%,#bf5af2);color:#fff;font:700 14px/1 var(--font);letter-spacing:.02em;box-shadow:inset 0 1px 0 rgba(255,255,255,.55),0 4px 12px rgba(70,90,230,.35)}
+.bn{display:none;font-weight:600;font-size:15px}
+@media (min-width:1100px){.bn{display:block;padding-right:6px}}
+.strip{display:flex;gap:2px;margin-left:auto;overflow-x:auto;scrollbar-width:none;-webkit-overflow-scrolling:touch;padding:2px}
+.strip::-webkit-scrollbar{display:none}
+.strip a{display:flex;align-items:center;padding:0 14px;height:40px;border-radius:999px;color:var(--label2);white-space:nowrap;font-weight:500;font-size:15px}
+.strip a i{display:none}
+.strip a:hover{color:var(--label);background:var(--fill);text-decoration:none}
+.strip a.on{color:var(--label);background:var(--seg-on);box-shadow:0 1px 3px rgba(0,0,0,.14),0 0 0 .5px var(--hair)}
+.sw{display:flex;align-items:center;gap:8px;flex:none}
+.seg{display:flex;padding:3px;border-radius:999px;background:var(--fill);cursor:pointer;border:0;font:600 13px/1 var(--font);color:var(--label2)}
+.seg span{padding:8px 11px;border-radius:999px}
+.seg[data-lang="en"] span:first-child,.seg[data-lang="id"] span:last-child{background:var(--seg-on);color:var(--label);box-shadow:0 1px 3px rgba(0,0,0,.16)}
+.sqbtn{width:40px;height:40px;border:0;border-radius:50%;background:var(--fill);color:var(--label);display:grid;place-items:center;cursor:pointer}
+.sqbtn:hover,.seg:hover{background:var(--hair)}
+.sqbtn svg{width:18px;height:18px;fill:currentColor}
+#prog{position:fixed;left:0;top:0;height:3px;width:0;background:linear-gradient(90deg,#4aa3ff,#bf5af2);z-index:80}
+button:active,.btn:active{transform:scale(.97)}
+
+/* ---------- HERO ---------- */
+.hero{padding:44px 0 10px}
+.hero .wrap{display:grid;grid-template-columns:1.02fr .98fr;gap:44px;align-items:center}
+.status{display:inline-flex;align-items:center;gap:10px;font:500 14px/1 var(--font);padding:10px 16px 10px 14px;border-radius:999px}
+.led{width:9px;height:9px;border-radius:50%;background:var(--green-glow);box-shadow:0 0 8px var(--green-glow)}
+@media (prefers-reduced-motion: no-preference){.led{animation:glow 2.6s ease-in-out infinite}@keyframes glow{50%{box-shadow:0 0 2px var(--green-glow);opacity:.75}}}
+.hero h1{font:700 clamp(54px,8.4vw,104px)/.98 var(--font);letter-spacing:-.045em;margin:26px 0 0}
+.hero h1 span{display:block}
+.hero h1 span:last-child{background:linear-gradient(95deg,#2f8cff,#7a5cf0 55%,#d159e6);-webkit-background-clip:text;background-clip:text;color:transparent;-webkit-text-fill-color:transparent;padding-bottom:.08em}
+.role{margin-top:22px;font-size:21px;line-height:1.42;max-width:34em;color:var(--label2);letter-spacing:-.016em}
+.role{text-wrap:pretty}
+.idcard{margin-top:28px;border-radius:30px;padding:14px;display:grid;grid-template-columns:108px 1fr;gap:20px;align-items:center}
+.idcard .av img{width:108px;height:136px;object-fit:cover;object-position:top;border-radius:22px}
+.idcard .rows{margin:0;display:grid;grid-template-columns:1fr 1fr;gap:12px 18px;padding-right:10px}
+.idcard dt{font-size:12.5px;font-weight:500;color:var(--label2)}
+.idcard dd{margin:2px 0 0;font-weight:600;font-size:16px;line-height:1.25}
+.idcard .w2{grid-column:1/-1}
+.cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:26px}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:14px 24px;border-radius:999px;font:600 16px/1 var(--font);cursor:pointer;border:0;background:var(--tint);color:var(--blue-text);letter-spacing:-.011em}
+.btn:hover{text-decoration:none;filter:brightness(.97)}
+.btn.solid{background:var(--blue);color:#fff;box-shadow:inset 0 1px 0 rgba(255,255,255,.35),0 6px 16px rgba(0,113,227,.28)}
+.btn.sm{padding:11px 18px;font-size:15px}
+
+/* scope: always-dark glass, like a Control Center tile */
+.scope{background:linear-gradient(160deg,rgba(30,32,44,.9),rgba(12,14,22,.94));color:#f2f2f7;border-radius:36px;padding:22px;border:1px solid rgba(255,255,255,.16);box-shadow:inset 0 1px 0 rgba(255,255,255,.22),0 26px 60px rgba(30,40,100,.28);-webkit-backdrop-filter:blur(30px) saturate(1.6);backdrop-filter:blur(30px) saturate(1.6)}
+.sc-top{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;align-items:baseline;padding:0 6px}
+.sc-top h2{font:700 24px/1.1 var(--font);letter-spacing:-.025em}
+.sc-top small{font-size:13px;font-weight:500;color:#a8a8b4}
+.leg{display:flex;gap:16px;flex-wrap:wrap;margin:12px 6px 12px;font-size:13px;font-weight:500;color:#c9c9d3}
+.leg span{display:inline-flex;align-items:center;gap:8px}
+.leg i{display:inline-block;width:22px;height:0;border-top:3px solid #3d9aff;border-radius:2px}
+.leg i.o{border-top:2px dashed #98989f}
+.leg i.s{border-top:2px dotted #30d158}
+#scope{display:block;width:100%;height:270px;border-radius:20px;background:#0a0d14}
+.sc-read{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:12px}
+.sc-read div{background:rgba(255,255,255,.07);border-radius:18px;padding:12px 14px}
+.sc-read dt{font-size:12.5px;font-weight:500;color:#a8a8b4}
+.sc-read dd{margin:5px 0 0;font:600 26px/1 var(--font);letter-spacing:-.03em;color:#fff;font-variant-numeric:tabular-nums}
+.sc-ctl{display:grid;gap:12px;margin-top:18px}
+.sl{display:grid;grid-template-columns:200px 1fr 52px;gap:12px;align-items:center;font-size:14.5px;font-weight:500;color:#dcdce4}
+.sl output{text-align:right;color:#fff;font-weight:600;font-variant-numeric:tabular-nums}
+input[type=range]{-webkit-appearance:none;appearance:none;width:100%;height:30px;background:transparent;cursor:pointer;margin:0;--p:50%}
+input[type=range]::-webkit-slider-runnable-track{height:6px;border-radius:3px;background:linear-gradient(90deg,#0a84ff var(--p),rgba(255,255,255,.2) var(--p))}
+input[type=range]::-moz-range-track{height:6px;border-radius:3px;background:rgba(255,255,255,.2)}
+input[type=range]::-moz-range-progress{height:6px;border-radius:3px;background:#0a84ff}
+input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:28px;height:28px;margin-top:-11px;border-radius:50%;background:#fff;border:0;box-shadow:0 2px 8px rgba(0,0,0,.4),inset 0 -1px 0 rgba(0,0,0,.08)}
+input[type=range]::-moz-range-thumb{width:28px;height:28px;border-radius:50%;background:#fff;border:0;box-shadow:0 2px 8px rgba(0,0,0,.4)}
+.row2{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-top:2px}
+.chipbtn{font:600 14px/1 var(--font);padding:10px 15px;border:0;background:rgba(255,255,255,.12);color:#f2f2f7;border-radius:999px;cursor:pointer}
+.chipbtn:hover{background:rgba(255,255,255,.2)}
+.chipbtn.on{background:#fff;color:#111}
+.chk{display:inline-flex;align-items:center;gap:10px;font-size:14.5px;font-weight:500;color:#dcdce4;margin-left:auto;cursor:pointer}
+.chk input{-webkit-appearance:none;appearance:none;width:51px;height:31px;border-radius:999px;background:rgba(255,255,255,.22);position:relative;cursor:pointer;margin:0;transition:background .2s;flex:none}
+.chk input::after{content:"";position:absolute;left:2px;top:2px;width:27px;height:27px;border-radius:50%;background:#fff;box-shadow:0 2px 5px rgba(0,0,0,.3);transition:transform .2s}
+.chk input:checked{background:#30d158}
+.chk input:checked::after{transform:translateX(20px)}
+.chk input:focus-visible{outline:3px solid #64b5ff;outline-offset:2px}
+.sc-note{margin:16px 6px 0;font-size:13.5px;line-height:1.45;color:#a8a8b4}
+
+/* ---------- SECTIONS ---------- */
+.sheet-grid{display:block}
+.rail,.sno,.gnd{display:none}
+.sbody{padding:84px 0 0;min-width:0}
+.sh{margin-bottom:30px;max-width:44em}
+.sh h2{font:700 clamp(38px,5.2vw,62px)/1.02 var(--font);letter-spacing:-.04em}
+.sh p{margin-top:12px;color:var(--label2);font-size:19px;line-height:1.45;text-wrap:pretty}
+.sub{font:700 28px/1.1 var(--font);letter-spacing:-.025em;margin:44px 0 16px}
+.lab{display:inline-flex;align-items:center;font:600 13px/1 var(--font);background:var(--tint);color:var(--blue-text);padding:7px 12px;border-radius:999px}
+.lab.out{background:var(--fill);color:var(--label)}
+.lab.amb{background:var(--orange-tint);color:var(--orange-text)}
+.cap{font:600 13px/1.2 var(--font);letter-spacing:.02em;text-transform:uppercase;color:var(--label2)}
+ul.bul{margin:12px 0 0;padding:0;list-style:none;display:grid;gap:10px}
+ul.bul li{position:relative;padding-left:20px;font-size:16.5px;line-height:1.45}
+ul.bul li::before{content:"";position:absolute;left:2px;top:.62em;width:7px;height:7px;border-radius:50%;background:var(--blue)}
+
+/* meters */
+.meters{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:28px}
+.meter{border-radius:24px;padding:18px 18px 18px}
+.meter b{display:block;font:700 clamp(28px,3.1vw,38px)/1 var(--font);letter-spacing:-.035em;color:var(--blue-text);white-space:nowrap;font-variant-numeric:tabular-nums}
+.meter span{display:block;margin-top:10px;font-size:14.5px;line-height:1.35;color:var(--label2)}
+
+/* about */
+.about-grid{display:grid;grid-template-columns:1fr 340px;gap:44px;align-items:start}
+.lead{font-size:20px;line-height:1.55;max-width:34em;text-wrap:pretty;letter-spacing:-.015em}
+.nameplate{overflow:hidden;border-radius:32px}
+.nameplate img{width:100%;aspect-ratio:5/4;object-fit:cover;object-position:center 35%}
+.nameplate dl{margin:0;padding:6px 20px 12px}
+.nameplate .r{padding:13px 0;border-bottom:1px solid var(--hair)}
+.nameplate .r:last-child{border-bottom:0}
+.nameplate dt{font-size:12.5px;font-weight:500;color:var(--label2)}
+.nameplate dd{margin:3px 0 0;font-weight:600;font-size:16px}
+
+/* grouped lists */
+.dtable,.mx,.log{border-radius:30px;overflow:hidden}
+.dr{display:grid;grid-template-columns:130px 1.2fr 1.4fr 150px;border-bottom:1px solid var(--hair)}
+.dr:last-child{border-bottom:0}
+.dr>div{padding:22px 24px;min-width:0}
+.dr.hd{display:none}
+.inst{display:flex;gap:16px;align-items:flex-start}
+.inst .lg{width:60px;height:60px;flex:none;object-fit:contain;background:#fff;border-radius:18px;padding:7px;box-shadow:0 0 0 .5px var(--hair),0 2px 8px rgba(0,0,0,.08)}
+.dr h4{font:700 20px/1.2 var(--font);letter-spacing:-.02em}
+.dr .pg{margin-top:5px;font-weight:600;color:var(--blue-text);font-size:15.5px}
+.dr p{font-size:15.5px;color:var(--label2)}
+.dr .yr,.dr .sc{font-weight:600;font-size:15.5px;line-height:1.4}
+
+/* experience */
+.xp{border-radius:34px;overflow:hidden}
+.xp-h{display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;align-items:flex-start;padding:28px 30px;border-bottom:1px solid var(--hair)}
+.xp-h h3{font:700 clamp(28px,3.4vw,38px)/1.08 var(--font);letter-spacing:-.03em;margin-top:14px}
+.xp-h .co{margin-top:6px;font-size:18px;color:var(--label2)}
+.xp-h .co b{color:var(--label)}
+.xp-h .tags{display:flex;gap:8px;flex-wrap:wrap}
+.xp-b{display:grid;grid-template-columns:1fr 1.1fr;gap:36px;padding:28px 30px}
+.pln{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:12px}
+.pln figure,.stage{margin:0}
+.pln img{aspect-ratio:3/4;object-fit:cover;width:100%;border-radius:20px;cursor:zoom-in}
+.fc{font-size:13.5px;line-height:1.35;color:var(--label2);margin-top:8px}
+.seq{border-top:1px solid var(--hair);padding:26px 30px 30px}
+.seq-h{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;align-items:baseline;margin-bottom:16px}
+.seq-h .sub{margin:0;font-size:24px}
+.track{display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x proximity;padding-bottom:14px}
+.track::-webkit-scrollbar{height:8px}
+.track::-webkit-scrollbar-thumb{background:var(--hair);border-radius:4px}
+.stage{flex:0 0 200px;scroll-snap-align:start;position:relative}
+.stage .no{position:absolute;left:10px;top:10px;z-index:1;display:grid;place-items:center;width:30px;height:30px;border-radius:50%;font:700 13px/1 var(--font);background:rgba(255,255,255,.88);color:#1c1c1e;box-shadow:0 2px 8px rgba(0,0,0,.25)}
+.stage img{aspect-ratio:3/4;object-fit:cover;width:100%;border-radius:22px;cursor:zoom-in}
+.lr{display:grid;grid-template-columns:150px 1fr 1.25fr;border-bottom:1px solid var(--hair)}
+.lr:last-child{border-bottom:0}
+.lr>div{padding:24px 26px}
+.lr .when{font-weight:600;font-size:15.5px;color:var(--label2)}
+.lr h4{font:700 20px/1.2 var(--font);letter-spacing:-.02em}
+.lr .orgn{margin-top:5px;font-size:15.5px;color:var(--label2)}
+.lr ul.bul{margin-top:0}
+
+/* projects: segmented control + glass sheet */
+.pj{display:block}
+.pj-list{display:flex;gap:4px;padding:5px;border-radius:999px;width:fit-content;max-width:100%;overflow-x:auto;scrollbar-width:none;margin-bottom:18px}
+.pj-list::-webkit-scrollbar{display:none}
+.pj-list button{all:unset;box-sizing:border-box;cursor:pointer;display:flex;align-items:baseline;gap:8px;padding:12px 20px;border-radius:999px;white-space:nowrap;color:var(--label2);font-weight:600;font-size:15.5px}
+.pj-list button:hover{background:var(--fill)}
+.pj-list button[aria-selected="true"]{background:var(--seg-on);color:var(--label);box-shadow:0 1px 4px rgba(0,0,0,.16),0 0 0 .5px var(--hair)}
+.pj-list button:focus-visible{outline:3px solid var(--blue);outline-offset:1px}
+.pj-list .id{font-size:12.5px;font-weight:700;color:var(--blue-text);letter-spacing:.02em}
+.pj-list .t{font-weight:600}
+.pj-panel{padding:34px 36px 38px;min-width:0;border-radius:36px}
+.pj-panel[hidden]{display:none}
+.pj-h{display:flex;justify-content:space-between;gap:16px;align-items:flex-start;flex-wrap:wrap}
+.pj-h h3{font:700 clamp(30px,4vw,46px)/1.04 var(--font);letter-spacing:-.035em}
+.pj-meta{margin-top:10px;font-size:16px;color:var(--label2)}
+.pj-cols{display:grid;grid-template-columns:1.1fr .9fr;gap:34px;margin-top:28px;align-items:start}
+.pj-copy{display:grid;gap:22px}
+.pj-copy p{font-size:17px;margin-top:7px;line-height:1.5;text-wrap:pretty}
+.view{background:var(--fill);border-radius:26px;display:grid;place-items:center;padding:18px;min-height:260px}
+.view img{max-height:300px;width:auto;object-fit:contain;cursor:zoom-in}
+.view img.wh{background:#fff;padding:10px;border-radius:16px;width:100%;max-height:none}
+.mini{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:14px}
+.pj-panel .meter{background:var(--fill);-webkit-backdrop-filter:none;backdrop-filter:none;border:0;box-shadow:none;border-radius:20px;padding:15px}
+.mini .meter b{font-size:clamp(21px,2.3vw,28px)}
+.mini .meter span{font-size:13.5px;margin-top:8px}
+table.spec{width:100%;border-collapse:collapse;font-size:15.5px;margin-top:6px}
+table.spec th,table.spec td{text-align:left;padding:11px 0;border-bottom:1px solid var(--hair);vertical-align:top}
+table.spec tr:last-child th,table.spec tr:last-child td{border-bottom:0}
+table.spec th{font-weight:500;color:var(--label2);width:46%;padding-right:12px}
+table.spec td{font-weight:600;font-variant-numeric:tabular-nums}
+.contrib{background:var(--tint);border-radius:22px;padding:18px 20px}
+.contrib .cap{color:var(--blue-text)}
+.steps5{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;margin-top:12px}
+.steps5 img{aspect-ratio:3/4;object-fit:cover;width:100%;border-radius:18px;cursor:zoom-in}
+.pj-link{margin-top:24px}
+
+/* skills */
+.mrow{display:grid;grid-template-columns:240px 1fr 220px;border-bottom:1px solid var(--hair)}
+.mrow:last-child{border-bottom:0}
+.mrow>div{padding:22px 26px;min-width:0}
+.mrow.hd{display:none}
+.mrow h4{font:700 20px/1.2 var(--font);letter-spacing:-.02em}
+.mrow .g{margin-top:5px;font-size:14.5px;color:var(--label2)}
+.tg,.seen{display:flex;flex-wrap:wrap;gap:8px;align-items:flex-start;align-content:flex-start}
+.tg span{font-size:14.5px;font-weight:500;line-height:1;padding:9px 14px;background:var(--fill);border-radius:999px}
+.seen a,.seen button{font:600 14px/1 var(--font);padding:9px 14px;border:0;background:var(--tint);color:var(--blue-text);cursor:pointer;border-radius:999px}
+.seen a:hover,.seen button:hover{text-decoration:none;filter:brightness(.95)}
+
+/* awards */
+.aw-grid{display:grid;grid-template-columns:1.55fr 1fr;gap:20px;align-items:start}
+.plates{display:grid;gap:14px}
+.plate-row{display:grid;grid-template-columns:78px 1fr 150px;gap:18px;align-items:center;padding:16px;border-radius:30px}
+.ord{width:78px;height:78px;border-radius:24px;display:grid;place-items:center;align-content:center;background:linear-gradient(145deg,#ffe066,#ff9f0a);color:#3b2400;font:700 22px/1 var(--font);letter-spacing:-.02em;text-align:center;box-shadow:inset 0 1px 0 rgba(255,255,255,.6),0 6px 14px rgba(255,159,10,.3)}
+.ord small{display:block;font:700 11px/1 var(--font);letter-spacing:.02em;margin-top:5px}
+.plate-row h3{font:700 22px/1.15 var(--font);letter-spacing:-.025em}
+.plate-row p{font-size:15px;color:var(--label2);margin-top:6px;line-height:1.4}
+.plate-row .mono{font-size:13.5px;font-weight:500;color:var(--label2)}
+.plate-row img,.cert img{width:100%;aspect-ratio:1.45/1;object-fit:cover;object-position:top;border-radius:18px;cursor:zoom-in}
+.plate-row .lk{display:inline-block;margin-top:8px;font-weight:600;font-size:15px}
+.cert{padding:22px;border-radius:32px;display:grid;gap:14px}
+.cert h3{font:700 28px/1.1 var(--font);letter-spacing:-.03em}
+.cert .lab{justify-self:start}
+.log{margin-top:20px}
+.cert img{aspect-ratio:auto;object-fit:contain;background:#fff}
+
+/* organization */
+.feat{display:grid;grid-template-columns:minmax(0,330px) 1fr;gap:36px;padding:18px;border-radius:38px;align-items:center}
+.feat .poster img{width:100%;border-radius:28px;cursor:zoom-in;box-shadow:0 10px 30px rgba(0,0,0,.2)}
+.feat .fb{padding:10px 18px 10px 0}
+.feat h3{font:700 clamp(28px,3.4vw,40px)/1.06 var(--font);letter-spacing:-.035em;margin-top:14px}
+.feat .rl{margin-top:8px;font-size:18px;color:var(--label2)}
+.feat .tm{margin-top:18px;border-radius:22px;aspect-ratio:16/9;object-fit:cover;width:100%;cursor:zoom-in}
+.feat .cta{margin-top:20px}
+.orgs{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:18px}
+.orgs article{border-radius:32px;overflow:hidden;display:flex;flex-direction:column}
+.orgs img{aspect-ratio:16/9;object-fit:cover;width:100%;cursor:zoom-in}
+.orgs .b{padding:20px 24px 24px;display:grid;gap:6px}
+.orgs h3{font:700 26px/1.1 var(--font);letter-spacing:-.03em}
+.orgs p{font-size:16px;color:var(--label2)}
+.cm{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:14px}
+.cm figure{margin:0;padding:10px 10px 16px;border-radius:26px}
+.cm img{aspect-ratio:1.414/1;object-fit:cover;width:100%;border-radius:16px;cursor:zoom-in}
+.cm h4{font:700 16px/1.25 var(--font);margin:12px 6px 0;letter-spacing:-.015em}
+.cm p{font-size:14px;color:var(--label2);margin:3px 6px 0}
+
+/* contact */
+.contact .sbody{padding:56px 52px 48px;border-radius:44px;margin-top:84px}
+.contact h2{font:700 clamp(44px,7.2vw,92px)/.98 var(--font);letter-spacing:-.045em}
+.contact h2 em{font-style:normal;background:linear-gradient(95deg,#2f8cff,#7a5cf0 55%,#d159e6);-webkit-background-clip:text;background-clip:text;color:transparent;-webkit-text-fill-color:transparent;padding-bottom:.08em}
+.contact .sh{max-width:none}
+.contact .sub2{margin-top:20px;max-width:34em;font-size:20px;color:var(--label2)}
+.ct{display:grid;grid-template-columns:repeat(3,1fr);border-radius:26px;background:var(--fill);margin:30px 0 0;overflow:hidden}
+.ct>div{padding:20px 24px;border-right:1px solid var(--hair);min-width:0}
+.ct>div:last-child{border-right:0}
+.ct dt{font-size:13px;font-weight:500;color:var(--label2)}
+.ct dd{margin:6px 0 0;font:600 19px/1.3 var(--font);overflow-wrap:anywhere;letter-spacing:-.015em}
+footer{margin-top:56px}
+footer .wrap{padding:0 20px 34px;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;align-items:center}
+footer b{font-weight:700;font-size:17px;letter-spacing:-.02em}
+footer p{font-size:13.5px;color:var(--label2);margin-top:3px}
+.gl{display:flex;align-items:center;gap:14px;padding:10px 18px;border-radius:999px;font-size:14px;font-weight:600}
+.gl input{width:150px;--p:45%}
+.gl input::-webkit-slider-runnable-track{background:linear-gradient(90deg,var(--blue) var(--p),var(--fill) var(--p))}
+.gl input::-moz-range-track{background:var(--fill)}
+.gl input::-moz-range-progress{background:var(--blue)}
+#to-top{position:fixed;right:18px;bottom:18px;z-index:40;width:48px;height:48px;border-radius:50%;color:var(--label);cursor:pointer;display:grid;place-items:center;opacity:0;pointer-events:none;transition:opacity .2s;padding:0}
+#to-top.show{opacity:1;pointer-events:auto}
+#to-top svg{width:18px;height:18px;fill:currentColor}
+
+/* lightbox */
+dialog{border:0;padding:0;background:transparent;max-width:min(1080px,96vw);max-height:94vh;width:100%}
+dialog::backdrop{background:rgba(0,0,0,.55);-webkit-backdrop-filter:blur(16px);backdrop-filter:blur(16px)}
+dialog img{max-height:80vh;width:auto;margin:0 auto;border-radius:24px;background:#fff;box-shadow:0 20px 60px rgba(0,0,0,.5)}
+dialog p{color:#f2f2f7;text-align:center;margin-top:14px;font-size:15px}
+dialog button{position:fixed;top:16px;right:16px;background:rgba(255,255,255,.2);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);color:#fff;border:1px solid rgba(255,255,255,.3);font:600 14px/1 var(--font);padding:11px 16px;cursor:pointer;border-radius:999px}
+
+/* responsive */
+@media (max-width:1060px){
+  .hero .wrap{grid-template-columns:1fr;gap:38px}
+  .about-grid{grid-template-columns:1fr}
+  .nameplate{max-width:440px}
+  .xp-b,.pj-cols,.aw-grid{grid-template-columns:1fr}
+  .mrow{grid-template-columns:210px 1fr}
+  .mrow>div:nth-child(3){grid-column:1/-1;border-top:1px solid var(--hair);padding-top:16px}
+  .cm{grid-template-columns:1fr 1fr}
+  .meters{grid-template-columns:1fr 1fr}
+  .feat{grid-template-columns:minmax(0,280px) 1fr}
+}
+@media (max-width:760px){
+  html{scroll-padding-top:84px}
+  .top{top:8px;padding:0 8px}
+  .top .wrap{height:56px}
+  .plate{width:40px;height:40px;border-radius:13px}
+  .sbody{padding:60px 0 0}
+  .hero{padding:26px 0 0}
+  .idcard{grid-template-columns:84px 1fr;gap:14px}
+  .idcard .av img{width:84px;height:112px;border-radius:18px}
+  .idcard .rows{gap:10px 12px;padding-right:4px}
+  .idcard dd{font-size:15px}
+  .role{font-size:19px}
+  .sl{grid-template-columns:1fr 52px;grid-template-areas:"l o" "r r"}
+  .sl label{grid-area:l}.sl output{grid-area:o}.sl input{grid-area:r}
+  .chk{margin-left:0}
+  .scope{padding:18px;border-radius:30px}
+  .dr{grid-template-columns:1fr}
+  .dr>div{padding:6px 20px}
+  .dr>div:first-child{padding-top:18px}.dr>div:last-child{padding-bottom:18px}
+  .lr{grid-template-columns:1fr}
+  .lr>div{padding:6px 20px}.lr>div:first-child{padding-top:18px}.lr>div:last-child{padding-bottom:18px}
+  .mrow{grid-template-columns:1fr}
+  .mrow>div{padding:8px 20px}.mrow>div:first-child{padding-top:18px}.mrow>div:last-child{padding-bottom:18px}
+  .mrow>div:nth-child(3){border-top:0}
+  .plate-row{grid-template-columns:72px 1fr;gap:14px;padding:14px}
+  .ord{width:72px;height:72px}
+  .plate-row>div:last-child{grid-column:1/-1}
+  .orgs,.cm,.ct{grid-template-columns:1fr}
+  .ct>div{border-right:0;border-bottom:1px solid var(--hair)}
+  .ct>div:last-child{border-bottom:0}
+  .feat{grid-template-columns:1fr;gap:20px}
+  .feat .fb{padding:0 8px 10px}
+  .steps5{grid-template-columns:repeat(3,1fr)}
+  .mini{grid-template-columns:1fr}
+  .pj-panel{padding:24px 20px 28px;border-radius:30px}
+  .xp-h,.xp-b,.seq{padding-left:20px;padding-right:20px}
+  .xp-b{gap:26px}
+  .meters{gap:10px}
+  .contact .sbody{padding:36px 22px 30px;border-radius:34px;margin-top:60px}
+  footer .wrap{flex-direction:column;align-items:flex-start}
+}
+
+.sect{margin-top:32px}
+.res6{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:10px}
+.meter .nt{margin-top:4px;font-size:12.5px;opacity:.85}
+.gal{display:grid;gap:10px;margin-top:10px}
+.gal figure{margin:0;min-width:0}
+.gal img{width:100%;border-radius:20px;object-fit:cover;cursor:zoom-in}
+.gal.f2{grid-template-columns:minmax(0,.5fr) minmax(0,1fr)}
+.gal.f2 img{height:320px}
+.gal.d4{grid-template-columns:repeat(4,1fr)}
+.gal.d4 img{aspect-ratio:1.66;background:#000;border-radius:16px}
+.gal.b3{grid-template-columns:repeat(3,1fr)}
+.gal.b3 img{height:240px}
+.gal.p2{grid-template-columns:1fr 1fr}
+.gal.p2 img{aspect-ratio:1100/587;object-fit:contain;background:#111;border-radius:18px}
+.press{margin-top:10px;border-radius:22px;background:var(--fill);overflow:hidden}
+.press a{display:grid;grid-template-columns:1fr auto;gap:12px;align-items:center;padding:15px 20px;border-bottom:1px solid var(--hair);color:var(--label)}
+.press a:last-child{border-bottom:0}
+.press a:hover{background:var(--hair);text-decoration:none}
+.press b{display:block;font-weight:600;font-size:16px;line-height:1.3;letter-spacing:-.011em;margin-top:2px}
+.press span{font-size:13px;font-weight:500;color:var(--label2)}
+.press i{font-style:normal;color:var(--blue-text);font-weight:700;font-size:18px}
+.certfig{margin:22px 0 0;max-width:340px}
+.certfig img{border-radius:16px;width:100%;cursor:zoom-in;box-shadow:0 0 0 .5px var(--hair),0 6px 18px rgba(0,0,0,.12)}
+.feat{display:block;padding:18px}
+.feat-a{display:grid;grid-template-columns:minmax(0,300px) 1fr;gap:36px;align-items:center}
+.feat-b{display:grid;grid-template-columns:minmax(0,1.15fr) 1fr;gap:32px;align-items:center;margin-top:20px;padding-top:20px;border-top:1px solid var(--hair)}
+.feat-b>img{width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:24px;cursor:zoom-in}
+.feat-b h3{font-size:clamp(24px,2.6vw,30px)}
+@media (max-width:1060px){.gal.d4{grid-template-columns:repeat(2,1fr)}.res6{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:760px){.res6,.gal.p2,.gal.b3{grid-template-columns:1fr}.gal.f2{grid-template-columns:1fr}.gal.f2 img{height:auto}.gal.b3 img{height:auto;aspect-ratio:4/3}.feat-a,.feat-b{grid-template-columns:1fr;gap:20px}.feat .fb{padding:0 8px 8px}}
+
+.orgs.o3{grid-template-columns:repeat(3,1fr);margin-top:0;align-items:stretch}
+.orgs.o3 .b{gap:8px}
+.orgs.o3 .rl{font-size:15px;color:var(--label2)}
+.orgs.o3 ul.bul{margin-top:8px;gap:8px}
+.orgs.o3 ul.bul li{font-size:15px;line-height:1.42}
+.orgs.o3 .cta{margin-top:10px}
+.cm p.ct-d{font-size:13.5px;line-height:1.4;margin-top:8px}
+@media (max-width:1060px){.orgs.o3{grid-template-columns:1fr 1fr}}
+@media (max-width:760px){.orgs.o3{grid-template-columns:1fr}}
+
+.xp-b{grid-template-columns:minmax(0,1.5fr) minmax(0,1fr);align-items:start}
+.certside{display:grid;gap:10px;align-content:start}
+.certside .certfig{margin:0;max-width:none}
+.seq.docs{padding-bottom:6px}
+.seq.docs2{border-top:0;padding-top:20px}
+.sh2 h5{font:700 18px/1.2 var(--font);letter-spacing:-.015em;margin:0}
+.seq.docs .sub{font-size:24px}
+@media (max-width:1060px){.xp-b{grid-template-columns:1fr}.certside{max-width:420px}}
+
+/* ===== Motion: elegant, restrained ===== */
+@keyframes rise{from{opacity:0;transform:translateY(26px);filter:blur(10px)}to{opacity:1;transform:none;filter:none}}
+@keyframes riseS{from{opacity:0;transform:translateY(30px) scale(.965);filter:blur(8px)}to{opacity:1;transform:none;filter:none}}
+@keyframes navIn{from{opacity:0;transform:translateY(-16px)}to{opacity:1;transform:none}}
+@keyframes panelIn{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+@keyframes lf{from{opacity:.25}to{opacity:1}}
+@keyframes drift{from{transform:translate3d(0,0,0) scale(1)}to{transform:translate3d(6vmax,4vmax,0) scale(1.12)}}
+.mo .top{animation:navIn .9s cubic-bezier(.2,.8,.2,1) backwards}
+.mo .hero .status,.mo .hero h1 span,.mo .hero .role,.mo .hero .idcard,.mo .hero .cta{animation:rise 1.05s cubic-bezier(.2,.8,.2,1) var(--d,0s) backwards}
+.mo .hero .status{--d:.12s}
+.mo .hero h1 span:nth-child(1){--d:.22s}
+.mo .hero h1 span:nth-child(2){--d:.34s}
+.mo .hero .role{--d:.48s}
+.mo .hero .idcard{--d:.6s}
+.mo .hero .cta{--d:.72s}
+.mo .hero .scope{animation:riseS 1.2s cubic-bezier(.2,.8,.2,1) .45s backwards}
+.mo .pj-panel:not([hidden]){animation:panelIn .65s cubic-bezier(.2,.8,.2,1) backwards}
+.mo main.lf{animation:lf .5s ease}
+.rv{opacity:0;transform:translateY(26px) scale(.985);transition:opacity .9s cubic-bezier(.2,.8,.2,1),transform 1s cubic-bezier(.2,.8,.2,1),filter .9s cubic-bezier(.2,.8,.2,1)}
+.rv.in{opacity:1;transform:none}
+.sh.rv,h3.sub.rv{filter:blur(8px)}
+.sh.rv.in,h3.sub.rv.in{filter:none}
+/* sliding nav indicator */
+.mo .strip{position:relative}
+.mo .strip a{position:relative;z-index:1;transition:color .3s}
+.mo .strip a.on{background:transparent;box-shadow:none}
+.mo .strip .ind{position:absolute;left:0;top:2px;height:40px;border-radius:999px;background:var(--seg-on);box-shadow:0 1px 3px rgba(0,0,0,.14),0 0 0 .5px var(--hair);transition:transform .6s cubic-bezier(.3,1.2,.4,1),width .6s cubic-bezier(.3,1.2,.4,1),opacity .3s;pointer-events:none;z-index:0}
+/* light behind the glass */
+.orb{position:fixed;z-index:-1;width:62vmax;height:62vmax;border-radius:50%;pointer-events:none;background:radial-gradient(closest-side,var(--o),transparent);will-change:transform;animation:drift 30s ease-in-out infinite alternate}
+.orb.a{left:-18vmax;top:-22vmax;--o:rgba(70,150,255,.26)}
+.orb.b{right:-22vmax;bottom:-28vmax;--o:rgba(190,110,255,.22);animation-direction:alternate-reverse;animation-duration:36s}
+.spot{position:fixed;left:0;top:0;width:620px;height:620px;border-radius:50%;pointer-events:none;z-index:-1;opacity:0;background:radial-gradient(closest-side,rgba(110,165,255,.34),rgba(175,125,255,.14) 55%,transparent);transition:opacity .8s ease;will-change:transform}
+.spot.on{opacity:1}
+/* gentle hover lift */
+.mo .meters .meter,.mo .plate-row,.mo .orgs article,.mo .cm figure,.mo .cert,.mo .mx{transition:transform .55s cubic-bezier(.2,.8,.2,1)}
+.mo .meters .meter:hover,.mo .plate-row:hover,.mo .orgs article:hover,.mo .cm figure:hover,.mo .cert:hover{transform:translateY(-4px)}
+.orgs img{transition:transform 1.1s cubic-bezier(.2,.8,.2,1)}
+.orgs article:hover img{transform:scale(1.045)}
+.btn{transition:transform .35s cubic-bezier(.2,.9,.3,1.3),filter .25s}
+.btn:hover{transform:translateY(-1px)}
+.btn:active{transform:scale(.97)}
+@media print{.rv{opacity:1!important;transform:none!important;filter:none!important}.orb,.spot{display:none}}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="#home" aria-label="Galih Wahyu Nugroho, top of page"><span class="plate">GWN</span><span class="bn">Portfolio 2026</span></a>
+    <nav class="strip" aria-label="Sections">
+      <a href="#about"><i>01</i><span data-id="Tentang">About</span></a>
+      <a href="#experience"><i>02</i><span data-id="Pengalaman">Experience</span></a>
+      <a href="#projects"><i>03</i><span data-id="Proyek">Projects</span></a>
+      <a href="#skills"><i>04</i><span data-id="Keahlian">Skills</span></a>
+      <a href="#awards"><i>05</i><span data-id="Penghargaan">Awards</span></a>
+      <a href="#organization"><i>06</i><span data-id="Organisasi">Organization</span></a>
+      <a href="#contact"><i>07</i><span data-id="Kontak">Contact</span></a>
+    </nav>
+    <div class="sw">
+      <button class="seg" id="lang" type="button" data-lang="en" aria-label="Switch language, English or Indonesian"><span>EN</span><span>ID</span></button>
+      <button class="sqbtn" id="theme" type="button" aria-label="Switch light or dark theme"><svg id="themeIcon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12.8A9 9 0 1111.2 3a7 7 0 009.8 9.8z"/></svg></button>
+    </div>
+  </div>
+  <div id="prog"></div>
+</header>
+
+<section class="hero" id="home">
+  <div class="wrap">
+    <div>
+      <p class="status"><i class="led"></i><span data-id="Terbuka untuk magang · kelistrikan &amp; otomasi">Open for internships · electrical &amp; automation</span></p>
+      <h1><span>Galih Wahyu</span><span>Nugroho</span></h1>
+      <p class="role" data-id="Mahasiswa otomasi kelistrikan ITS. Saya pernah memasang penerangan jalan bandara di lapangan dan menala loop kendali yang menjaga kecepatan motor.">Electrical automation student at ITS. I have installed airport street lighting in the field and tuned the control loops that keep motors on speed.</p>
+      <div class="idcard">
+        <div class="av"><img src="img/formal.webp" alt="Portrait of Galih Wahyu Nugroho" width="108" height="136"></div>
+        <dl class="rows">
+          <div><dt data-id="Mahasiswa">Student</dt><dd>Galih W. Nugroho</dd></div>
+          <div><dt data-id="Institusi">Institution</dt><dd>ITS Surabaya</dd></div>
+          <div><dt data-id="IPK">GPA</dt><dd class="num">3.41 / 4.00</dd></div>
+          <div><dt data-id="Perkiraan lulus">Graduation</dt><dd data-id="Agustus 2028">August 2028</dd></div>
+          <div class="w2"><dt data-id="Program">Program</dt><dd data-id="D4 Teknik Elektro Otomasi">D4 Electrical Automation Engineering</dd></div>
+        </dl>
+      </div>
+      <div class="cta">
+        <a class="btn solid" href="#projects"><span data-id="Lihat proyek">See projects</span> →</a>
+        <a class="btn" href="#contact"><span data-id="Hubungi saya">Get in touch</span></a>
+        <a class="btn" href="https://drive.google.com/file/d/1TuguTHDbuEeu8c8XI6AW23fM2Y35EsBU/view?usp=sharing" target="_blank" rel="noopener"><span data-id="Lihat CV">View CV</span> ↗</a>
+      </div>
+    </div>
+
+    <div class="scope" id="loop">
+      <div class="sc-top"><h2 data-id="Coba loop kendalinya">Try the control loop</h2><small>CH1 · <span data-id="Kecepatan motor">Motor speed</span></small></div>
+      <div class="leg">
+        <span><i></i><span data-id="Lingkar tertutup (PI)">Closed loop (PI)</span></span>
+        <span><i class="o"></i><span data-id="Lingkar terbuka">Open loop</span></span>
+        <span><i class="s"></i>Setpoint</span>
+      </div>
+      <canvas id="scope" role="img" aria-label="Step response plot comparing a PI closed loop with an open loop under a load disturbance"></canvas>
+      <dl class="sc-read">
+        <div><dt>Overshoot</dt><dd id="rOs">—</dd></div>
+        <div><dt data-id="Waktu tunak ±2%">Settling ±2%</dt><dd id="rSt">—</dd></div>
+        <div><dt data-id="Penurunan saat beban">Load dip</dt><dd id="rDip">—</dd></div>
+      </dl>
+      <div class="sc-ctl">
+        <div class="sl"><label for="kp" data-id="Penguatan proporsional Kp">Proportional gain Kp</label><input id="kp" type="range" min="0.5" max="10" step="0.1" value="3"><output id="kpv">3.0</output></div>
+        <div class="sl"><label for="ki" data-id="Penguatan integral Ki">Integral gain Ki</label><input id="ki" type="range" min="0" max="4" step="0.05" value="1.5"><output id="kiv">1.50</output></div>
+        <div class="row2">
+          <button class="chipbtn" type="button" data-p="1,0.4" data-id="Lembut">Gentle</button>
+          <button class="chipbtn on" type="button" data-p="3,1.5" data-id="Seimbang">Balanced</button>
+          <button class="chipbtn" type="button" data-p="8,3.5" data-id="Agresif">Aggressive</button>
+          <label class="chk"><input id="ld" type="checkbox" checked><span data-id="Gangguan beban pada t = 11 s">Load disturbance at t = 11 s</span></label>
+        </div>
+      </div>
+      <p class="sc-note" data-id="Plant orde dua sebagai ilustrasi, bukan data proyek. Hasil nyata ada di proyek P-03 dan P-04.">Illustrative second-order plant, not project data. The real results are in projects P-03 and P-04.</p>
+    </div>
+  </div>
+</section>
+
+<main>
+<!-- 01 ABOUT -->
+<section class="sheet" id="about">
+  <div class="wrap sheet-grid">
+    <div class="rail" aria-hidden="true"><i class="node"></i></div>
+    <div class="sbody">
+      <div class="sh"><h2 data-id="Tentang saya">About</h2></div>
+      <div class="about-grid">
+        <div>
+          <p class="lead" data-id="Saya mahasiswa D4 Teknik Elektro Otomasi di Institut Teknologi Sepuluh Nopember (ITS). Di lapangan saya mengerjakan pengawatan panel, instalasi kabel, pemeriksaan pembumian, dan uji tahanan isolasi dengan multimeter dan megger sesuai prosedur K3. Bersama tim, saya menyambung lebih dari 250 lampu jalan dan 41 panel di Bandara Dhoho Kediri. Di kampus, saya merancang dan menala kendali PID dan rasio dengan MATLAB/Simulink, ATmega328P, dan OpenPLC, serta ikut dua proyek konversi kendaraan listrik. Saya terbiasa membaca diagram pengawatan, mencatat hasil ukur, menulis dokumentasi teknis, dan mengelola anggaran proyek.">I am a D4 Electrical Automation Engineering student at Institut Teknologi Sepuluh Nopember (ITS). In the field I have done panel wiring, cable installation, grounding inspection and insulation-resistance testing with a multimeter and megger under K3 safety procedures. With a team I connected more than 250 street lights and 41 panels at Dhoho Airport, Kediri. On campus I design and tune PID and ratio control in MATLAB/Simulink, ATmega328P and OpenPLC, and I have taken part in two electric-vehicle conversions. I read wiring diagrams, record measurements, write technical documentation and manage project budgets.</p>
+          <div class="meters">
+            <div class="meter"><b>250+</b><span data-id="Lampu jalan bandara disambung bersama tim">Airport street lights connected with the team</span></div>
+            <div class="meter"><b>41+</b><span data-id="Panel distribusi disambung bersama tim">Panels connected with the team</span></div>
+            <div class="meter"><b>73.59%</b><span data-id="Penghematan biaya operasional motor listrik Vario">Operating-cost saving, electric Vario</span></div>
+            <div class="meter"><b>IDR 120M</b><span data-id="Anggaran kerja sama yang dilaporkan, ditambah dana Rp 30 juta">Cooperation budget reported, plus a IDR 30M grant</span></div>
+          </div>
+        </div>
+        <aside class="pnl nameplate">
+          <img src="img/hero.webp" alt="Galih Wahyu Nugroho">
+          <dl>
+            <div class="r"><dt data-id="Bahasa">Languages</dt><dd data-id="Indonesia (ibu) · Inggris (Duolingo English Test 115)">Indonesian (native) · English (Duolingo English Test 115)</dd></div>
+            <div class="r"><dt data-id="Lokasi">Location</dt><dd data-id="Kediri / Surabaya, Jawa Timur">Kediri / Surabaya, East Java</dd></div>
+            <div class="r"><dt data-id="Minat">Interests</dt><dd data-id="Pertambangan, migas, otomasi industri">Mining, oil &amp; gas, industrial automation</dd></div>
+          </dl>
+        </aside>
+      </div>
+
+      <h3 class="sub" data-id="Pendidikan">Education</h3>
+      <div class="dtable">
+        <div class="dr hd"><div data-id="Periode">Period</div><div data-id="Institusi &amp; program">Institution &amp; program</div><div data-id="Keterangan">Details</div><div data-id="Nilai">Score</div></div>
+        <div class="dr">
+          <div class="yr">2024 – <span data-id="sekarang">now</span></div>
+          <div class="inst"><img class="lg" src="img/its.webp" alt="ITS logo" width="60" height="60"><div><h4 data-id="Institut Teknologi Sepuluh Nopember (ITS), Surabaya">Institut Teknologi Sepuluh Nopember (ITS), Surabaya</h4><p class="pg" data-id="Sarjana Terapan (D4), Teknik Elektro Otomasi">Applied Bachelor (D4), Electrical Automation Engineering</p></div></div>
+          <div><p data-id="Semester 5, perkiraan lulus Agustus 2028. Mata kuliah terkait: Rangkaian dan Pengukuran Listrik, Mesin Listrik dan Kendali Gerak, Instrumentasi Industri, Sistem Pengendalian Proses, Probabilitas dan Statistika.">Semester 5, expected graduation August 2028. Related courses: Electrical Circuits &amp; Measurements, Electrical Machinery &amp; Motion Control, Industrial Instrumentation, Process Control Systems, Probability &amp; Statistics.</p></div>
+          <div class="sc num">GPA 3.41 / 4.00</div>
+        </div>
+        <div class="dr">
+          <div class="yr">2021 – 2024</div>
+          <div class="inst"><img class="lg" src="img/smk.webp" alt="SMK Negeri 1 Kediri logo" width="60" height="60"><div><h4>SMK Negeri 1 Kediri</h4><p class="pg" data-id="Teknik Instalasi Tenaga Listrik">Electrical Power Installation Engineering</p></div></div>
+          <div><p data-id="Sistem motor listrik dan rangkaian kendali, serta praktik pengukuran dan instalasi listrik.">Electric motor systems and control circuits, with practice in electrical measurement and installation.</p></div>
+          <div class="sc num" data-id="Nilai 86,69 / 100">Score 86.69 / 100</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 02 EXPERIENCE -->
+<section class="sheet" id="experience">
+  <div class="wrap sheet-grid">
+    <div class="rail" aria-hidden="true"><i class="node"></i></div>
+    <div class="sbody">
+      <div class="sh"><h2 data-id="Pengalaman">Experience</h2><p data-id="Magang lapangan enam bulan di bidang instalasi listrik. Peran organisasi dan laboratorium ada di bagian Organisasi.">A six-month field internship in electrical installation. Organization and laboratory roles are in the Organization section.</p></div>
+
+      <article class="xp">
+        <div class="xp-h">
+          <div>
+            <span class="lab" data-id="Magang lapangan (PKL)">Field internship (PKL)</span>
+            <h3 data-id="Teknisi Listrik Magang">Electrical Technician Intern</h3>
+            <p class="co"><b>PT Bintang Kadiri</b> · Kediri, <span data-id="Jawa Timur">East Java</span></p>
+          </div>
+          <div class="tags"><span class="lab amb" data-id="Nilai: Sangat Baik">Rated: Sangat Baik (Very Good)</span><span class="lab out num">26 Jun – 30 Nov 2023</span></div>
+        </div>
+        <div class="xp-b">
+          <div>
+            <p data-id="PT Bintang Kadiri adalah perusahaan konstruksi kelistrikan dan sipil nasional yang berdiri sejak 1987 di Kediri. Lingkup kerjanya mencakup instalasi listrik, jaringan dan gardu PLN, penerangan jalan umum (PJU), pemasangan panel dan trafo, serta produksi konektor, ground rod, dan aksesori SUTR sesuai standar IEC/SPLN.">PT Bintang Kadiri is a national electrical and civil construction company founded in 1987 in Kediri. Its work covers electrical installation, PLN networks and substations, public street lighting (PJU), panel and transformer installation, and the manufacture of connectors, ground rods and SUTR accessories to IEC/SPLN standards.</p>
+            <ul class="bul">
+              <li data-id="Memasang dan menyambung rangkaian lampu jalan, termasuk menggelar kabel NYFGbY di dalam galian.">Installed and terminated street-light circuits, laying NYFGbY armoured cable in trenches.</li>
+              <li data-id="Memasang pembumian di dasar tiang lampu dan memeriksa tahanan isolasi dengan megger.">Installed grounding at light-pole bases and checked insulation resistance with a megger.</li>
+              <li data-id="Menyambung lampu jalan ke panel sub-distribusi dan menterminasi panel distribusi utama di ruang gardu.">Connected street lights to sub-distribution panels and terminated the main distribution panel in the substation room.</li>
+              <li data-id="Membantu pekerjaan layanan PLN: trafo step-down, jaringan SUTR, dan sambungan kWh meter baru.">Assisted PLN service work: step-down transformers, LV overhead lines (SUTR) and new kWh-meter connections.</li>
+            </ul>
+          </div>
+          <aside class="certside">
+            <span class="cap" data-id="Sertifikat magang">Internship certificate</span>
+            <figure class="certfig"><img src="img/pkl.webp" alt="Practical work (PKL) certificate, PT Bintang Kadiri" data-zoom data-cap="Practical Work (PKL) certificate from SMK Negeri 1 Kediri, 26 June to 30 November 2023, result Sangat Baik. Date of birth hidden." data-cap-id="Sertifikat Praktik Kerja Lapangan dari SMK Negeri 1 Kediri, 26 Juni s/d 30 November 2023, hasil Sangat Baik. Tanggal lahir disamarkan."><figcaption class="fc" data-id="Sertifikat PKL dari SMK Negeri 1 Kediri. Ketuk untuk memperbesar.">PKL certificate from SMK Negeri 1 Kediri. Tap to enlarge.</figcaption></figure>
+          </aside>
+        </div>
+        <div class="seq docs">
+          <div class="seq-h"><h4 class="sub" style="margin:0" data-id="Dokumentasi kegiatan magang">Internship activity documentation</h4></div>
+          <div class="seq-h sh2"><h5 data-id="Layanan PLN">PLN services</h5><span class="cap" data-id="3 kegiatan">3 activities</span></div>
+          <div class="track" tabindex="0" aria-label="PLN service photos, scroll sideways">
+            <figure class="stage"><img src="img/pln1.webp" alt="Installing a step-down transformer and panel" data-zoom data-cap="Installing a step-down transformer and panel for residential supply" data-cap-id="Memasang trafo step-down dan panel untuk suplai perumahan"><figcaption class="fc" data-id="Trafo step-down dan panel">Step-down transformer and panel</figcaption></figure>
+            <figure class="stage"><img src="img/pln2.webp" alt="Connecting the LV overhead line to a household meter" data-zoom data-cap="Connecting the LV overhead line (SUTR) to a household electricity meter" data-cap-id="Menyambung jaringan SUTR ke kWh meter rumah tangga"><figcaption class="fc" data-id="Jaringan SUTR ke kWh meter">LV overhead line (SUTR)</figcaption></figure>
+            <figure class="stage"><img src="img/pln3.webp" alt="Installing an electricity meter for a new connection" data-zoom data-cap="Installing an electricity meter for a new PLN connection" data-cap-id="Memasang kWh meter untuk sambungan PLN baru"><figcaption class="fc" data-id="kWh meter, sambungan baru">kWh meter, new connection</figcaption></figure>
+          </div>
+        </div>
+        <div class="seq docs2">
+          <div class="seq-h sh2"><h5 data-id="Bandara Dhoho Kediri">Dhoho Airport, Kediri</h5><span class="cap" data-id="Urutan pemasangan lampu jalan · 7 tahap">Street-lighting installation sequence · 7 stages</span></div>
+          <div class="track" tabindex="0" aria-label="Seven installation stages, scroll sideways">
+            <figure class="stage"><span class="no">01</span><img src="img/air1.webp" alt="Collecting and checking materials" data-zoom data-cap="01 · Collecting and checking materials before installation" data-cap-id="01 · Mengumpulkan dan memeriksa material sebelum pemasangan"><figcaption class="fc" data-id="Mengumpulkan dan memeriksa material">Collecting and checking materials</figcaption></figure>
+            <figure class="stage"><span class="no">02</span><img src="img/air2.webp" alt="Erecting street-light poles" data-zoom data-cap="02 · Erecting street-light poles and installing the lamps" data-cap-id="02 · Mendirikan tiang lampu jalan dan memasang lampunya"><figcaption class="fc" data-id="Mendirikan tiang, memasang lampu">Erecting poles, mounting lamps</figcaption></figure>
+            <figure class="stage"><span class="no">03</span><img src="img/air3.webp" alt="Laying cable in the trench" data-zoom data-cap="03 · Laying NYFGbY cable in the trench" data-cap-id="03 · Menggelar kabel NYFGbY di dalam galian"><figcaption class="fc" data-id="Menggelar kabel NYFGbY di galian">Laying NYFGbY cable in the trench</figcaption></figure>
+            <figure class="stage"><span class="no">04</span><img src="img/air4.webp" alt="Installing grounding at the pole base" data-zoom data-cap="04 · Installing the grounding system at the light-pole base" data-cap-id="04 · Memasang pembumian di dasar tiang lampu"><figcaption class="fc" data-id="Pembumian di dasar tiang">Grounding at the pole base</figcaption></figure>
+            <figure class="stage"><span class="no">05</span><img src="img/air5.webp" alt="Connecting six street lights to one sub-panel" data-zoom data-cap="05 · Connecting six street lights to one sub-distribution panel" data-cap-id="05 · Menyambung enam lampu jalan ke satu panel sub-distribusi"><figcaption class="fc" data-id="Enam lampu ke satu panel sub-distribusi">Six lights to one sub-panel</figcaption></figure>
+            <figure class="stage"><span class="no">06</span><img src="img/air6.webp" alt="Terminating the distribution panel" data-zoom data-cap="06 · Terminating the distribution panel in the substation room" data-cap-id="06 · Menterminasi panel distribusi di ruang gardu"><figcaption class="fc" data-id="Terminasi panel di ruang gardu">Panel termination, substation</figcaption></figure>
+            <figure class="stage"><span class="no">07</span><img src="img/air7.webp" alt="Final inspection of the distribution panel" data-zoom data-cap="07 · Final inspection of the distribution panel" data-cap-id="07 · Pemeriksaan akhir panel distribusi"><figcaption class="fc" data-id="Pemeriksaan akhir">Final inspection</figcaption></figure>
+          </div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- 03 PROJECTS -->
+<section class="sheet" id="projects">
+  <div class="wrap sheet-grid">
+    <div class="rail" aria-hidden="true"><i class="node"></i></div>
+    <div class="sbody">
+      <div class="sh"><h2 data-id="Proyek">Projects</h2><p data-id="Dua konversi kendaraan listrik dan dua rancangan sistem kendali. Pilih satu proyek untuk melihat masalah, hasil ukur, dan bagian yang saya kerjakan.">Two electric-vehicle conversions and two control-system designs. Pick a project to see the problem, the measured results and the part I worked on.</p></div>
+
+      <div class="pj">
+        <div class="pj-list" role="tablist" aria-label="Projects">
+          <button role="tab" id="t-p1" aria-selected="true" aria-controls="p1" data-proj="p1"><span class="id">P-01</span><span class="t" data-id="Traktor Perahu">Boat-Tractor</span></button>
+          <button role="tab" id="t-p2" aria-selected="false" aria-controls="p2" data-proj="p2"><span class="id">P-02</span><span class="t">Honda Vario</span></button>
+          <button role="tab" id="t-p3" aria-selected="false" aria-controls="p3" data-proj="p3"><span class="id">P-03</span><span class="t" data-id="PID &amp; Konveyor">PID &amp; Conveyor</span></button>
+          <button role="tab" id="t-p4" aria-selected="false" aria-controls="p4" data-proj="p4"><span class="id">P-04</span><span class="t" data-id="Kendali Rasio">Ratio Control</span></button>
+        </div>
+
+        <!-- P-01 -->
+        <div class="pj-panel" id="p1" role="tabpanel" aria-labelledby="t-p1">
+          <div class="pj-h"><div><span class="lab">P-01</span><h3 data-id="Prototipe Traktor Perahu Listrik" style="margin-top:12px">Electric Boat-Tractor Prototype</h3><p class="pj-meta" data-id="ITS, STP Otomotif, dan Kementerian Pertanian RI · Mar – Jun 2026 · Tim empat mahasiswa (PjBL 4-30)">ITS, STP Otomotif and the Ministry of Agriculture RI · Mar – Jun 2026 · Team of four students (PjBL 4-30)</p></div><span class="lab amb" data-id="Proyek Terinovatif FIPEC 2026">FIPEC 2026 · Most Innovative</span></div>
+          <div class="pj-cols">
+            <div class="pj-copy">
+              <div><span class="cap" data-id="Masalah">Problem</span><p data-id="Traktor perahu untuk sawah berlumpur dan perairan dangkal masih memakai mesin diesel. Agropro FS-28E, misalnya, memakai diesel 25 HP dengan putaran maksimum 2.200 rpm. Beban tinggi pada putaran rendah berarti perawatan berat, bising, dan boros bahan bakar.">Boat tractors for muddy rice fields and shallow water still run on diesel. The Agropro FS-28E, for example, uses a 25 HP diesel at up to 2,200 rpm. High load at low speed means heavy maintenance, noise and fuel use.</p></div>
+              <div><span class="cap" data-id="Solusi">Solution</span><p data-id="Sistem propulsi listrik: motor PMSM 10 kW dan kontrolernya, disuplai baterai LiFePO4 72 V 140 Ah ber-BMS, dengan pemantauan dan proteksi berbasis CAN.">An electric propulsion system: a 10 kW PMSM motor and controller fed by a 72 V 140 Ah LiFePO4 battery with BMS, with CAN-based monitoring and protection.</p></div>
+              <div class="contrib"><span class="cap" data-id="Bagian yang saya kerjakan">My part</span>
+                <ul class="bul">
+                  <li data-id="Keuangan proyek: mencatat pemasukan dan pengeluaran, menyusun laporan keuangan, dan menjaga catatan transaksi agar bisa ditelusuri.">Project finance: recorded income and expenses, prepared financial reports and kept transaction records traceable.</li>
+                  <li data-id="Arus kas: menyusun laporan arus kas, memantau pengeluaran terhadap dana yang ada, dan mengidentifikasi kebutuhan dana tiap kegiatan.">Cash flow: prepared cash-flow statements, tracked spending against available funds and identified the funding each activity needed.</li>
+                  <li data-id="Administrasi proyek: mencatat progres harian dan menyusun laporan proyek.">Project administration: kept daily progress records and compiled the project report.</li>
+                  <li data-id="Teknis: menggambar diagram blok sistem dan memasang kontroler motor (sesuai pembagian kerja tim).">Technical: drew the system block diagram and installed the motor controller (team work breakdown).</li>
+                  <li data-id="Tim BMS: bekerja bersama tim teknis pada integrasi baterai LiFePO4 dan BMS.">BMS team: worked with the technical team on LiFePO4 battery and BMS integration.</li>
+                </ul>
+              </div>
+            </div>
+            <div>
+              <div class="view"><img src="img/tractor.webp" alt="Electric boat-tractor prototype render" data-zoom data-cap="Electric boat-tractor prototype render" data-cap-id="Render prototipe traktor perahu listrik"></div>
+              <table class="spec"><caption class="cap" style="text-align:left;padding-top:20px" data-id="Spesifikasi dan target rancangan">Specifications and design targets</caption>
+                <tr><th data-id="Mesin acuan">Baseline engine</th><td data-id="Diesel 25 HP, maks. 2.200 rpm">25 HP diesel, 2,200 rpm max</td></tr>
+                <tr><th data-id="Motor listrik">Electric motor</th><td>PMSM 10 kW</td></tr>
+                <tr><th data-id="Kontroler">Controller</th><td>Votol EM350</td></tr>
+                <tr><th data-id="Torsi maksimum">Max torque</th><td data-id="170 N·m (diesel: 84 N·m)">170 N·m (diesel: 84 N·m)</td></tr>
+                <tr><th data-id="Baterai">Battery</th><td>72 V · 140 Ah LiFePO4 + BMS</td></tr>
+                <tr><th data-id="Area kerja">Operating area</th><td data-id="± 1 hektare">≈ 1 ha</td></tr>
+                <tr><th data-id="Durasi operasi">Runtime</th><td data-id="≥ 3 jam per pengisian">≥ 3 h per charge</td></tr>
+                <tr><th data-id="Suhu motor dan kontroler">Motor and controller temp.</th><td>≤ 85 °C</td></tr>
+                <tr><th data-id="Tundaan pemantauan CAN">CAN monitoring delay</th><td data-id="≤ 1 detik">≤ 1 s</td></tr>
+                <tr><th data-id="Anggaran komponen (RAB)">Component budget (RAB)</th><td>IDR 66.25M</td></tr>
+              </table>
+            </div>
+          </div>
+          <div class="sect"><span class="cap" data-id="Hasil uji lapangan">Field test results</span>
+            <div class="res6">
+              <div class="meter"><b>3.37 h</b><span data-id="Waktu operasi stabil tanpa gangguan">Stable runtime, no interruptions</span><span class="nt" data-id="Target rancangan: lebih dari 3 jam">Design target: over 3 h</span></div>
+              <div class="meter"><b>4.38 km</b><span data-id="Jarak tempuh maksimum">Maximum distance covered</span></div>
+              <div class="meter"><b>1,971.7 m²</b><span data-id="Luas pembajakan (0,197 ha)">Area ploughed (0.197 ha)</span><span class="nt" data-id="Target rancangan: ± 1 ha, dari simulasi">Design target: ≈ 1 ha, from simulation</span></div>
+              <div class="meter"><b>94.6%</b><span data-id="Rata-rata efisiensi sistem">Average system efficiency</span></div>
+              <div class="meter"><b>84.6 °C</b><span data-id="Suhu tertinggi kontroler">Peak controller temperature</span><span class="nt" data-id="Target rancangan: ≤ 85 °C">Design target: ≤ 85 °C</span></div>
+              <div class="meter"><b>91.7 °C</b><span data-id="Suhu tertinggi motor">Peak motor temperature</span><span class="nt" data-id="Target rancangan: ≤ 85 °C">Design target: ≤ 85 °C</span></div>
+            </div>
+            <p class="fc" style="margin-top:12px" data-id="Baterai turun dari 100% ke 0% SOC (82 V ke 77,5 V). Arus puncak 142 A, daya motor 11,1 kW, daya masuk 11,7 kW. Kecepatan maksimum 1,55 km/jam pada 2.201 rpm.">Battery went from 100% to 0% SOC (82 V to 77.5 V). Peak current 142 A, motor power 11.1 kW, input power 11.7 kW. Top speed 1.55 km/h at 2,201 rpm.</p>
+          </div>
+          <div class="sect"><span class="cap" data-id="Uji lapangan">Field test</span>
+            <div class="gal f2">
+              <figure><img src="img/tf1.webp" alt="Electric boat-tractor ploughing a rice field" data-zoom data-cap="Electric boat-tractor during the field test" data-cap-id="Traktor perahu listrik saat uji lapangan"></figure>
+              <figure><img src="img/tf2.webp" alt="Rice field used for the field test" data-zoom data-cap="Rice field where the field test took place" data-cap-id="Sawah tempat uji lapangan dilakukan"></figure>
+            </div>
+          </div>
+          <div class="sect"><span class="cap" data-id="Dasbor pemantauan (Nextion, CAN bus)">Monitoring dashboard (Nextion, CAN bus)</span>
+            <div class="gal d4">
+              <figure><img src="img/dash1.webp" alt="Dashboard page 1" data-zoom data-cap="Monitoring dashboard, page 1" data-cap-id="Dasbor pemantauan, halaman 1"></figure>
+              <figure><img src="img/dash2.webp" alt="Dashboard page 2" data-zoom data-cap="Monitoring dashboard, page 2" data-cap-id="Dasbor pemantauan, halaman 2"></figure>
+              <figure><img src="img/dash3.webp" alt="Dashboard page 3" data-zoom data-cap="Monitoring dashboard, page 3" data-cap-id="Dasbor pemantauan, halaman 3"></figure>
+              <figure><img src="img/dash4.webp" alt="Dashboard page 4, battery cells" data-zoom data-cap="Monitoring dashboard, page 4: battery cell voltage and temperature" data-cap-id="Dasbor pemantauan, halaman 4: tegangan dan suhu sel baterai"></figure>
+            </div>
+            <p class="fc" style="margin-top:10px" data-id="Layar sentuh Nextion menampilkan rpm, torsi, tegangan, arus, suhu, SOC, dan kondisi sel baterai lewat CAN bus.">The Nextion touchscreen shows rpm, torque, voltage, current, temperature, SOC and battery cell status over the CAN bus.</p>
+          </div>
+          <div class="sect"><span class="cap" data-id="Pengerjaan">Build</span>
+            <div class="gal b3">
+              <figure><img src="img/bd1.webp" alt="10 kW BLDC motor installation" data-zoom data-cap="10 kW motor installation" data-cap-id="Pemasangan motor 10 kW"><figcaption class="fc" data-id="Pemasangan motor">Motor installation</figcaption></figure>
+              <figure><img src="img/bd2.webp" alt="Votol EM350 controller installation and tuning" data-zoom data-cap="Votol EM350 controller installation and tuning" data-cap-id="Pemasangan dan penalaan kontroler Votol EM350"><figcaption class="fc" data-id="Pemasangan dan penalaan kontroler">Controller installation and tuning</figcaption></figure>
+              <figure><img src="img/bd3.webp" alt="Controller cooling radiator installation" data-zoom data-cap="Radiator for the controller cooling system" data-cap-id="Radiator untuk sistem pendingin kontroler"><figcaption class="fc" data-id="Radiator pendingin kontroler">Controller cooling radiator</figcaption></figure>
+            </div>
+          </div>
+          <div class="sect"><span class="cap" data-id="Liputan media tentang proyek">Press and media coverage of the project</span>
+            <div class="press">
+              <a href="https://kemdiktisaintek.go.id/news/article/dukung-pertanian-ramah-lingkungan-its-inovasikan-traktor-perahu-listrik" target="_blank" rel="noopener"><div><span>Kemdiktisaintek</span><b>Dukung Pertanian Ramah Lingkungan, ITS Inovasikan Traktor Perahu Listrik</b></div><i>↗</i></a>
+              <a href="https://www.its.ac.id/stp/atasi-pertanian-lahan-gambut-its-ciptakan-traktor-perahu-listrik/" target="_blank" rel="noopener"><div><span>ITS · STP Otomotif</span><b>Atasi Pertanian Lahan Gambut, ITS Ciptakan Traktor Perahu Listrik</b></div><i>↗</i></a>
+              <a href="https://www.tempo.co/sains/its-bikin-traktor-perahu-listrik-untuk-lahan-gambut-2275905" target="_blank" rel="noopener"><div><span>Tempo</span><b>ITS Bikin Traktor Perahu Listrik untuk Lahan Gambut</b></div><i>↗</i></a>
+              <a href="https://www.youtube.com/watch?v=r_TRijRwJ4k" target="_blank" rel="noopener"><div><span>YouTube</span><b data-id="Tonton videonya">Watch the video</b></div><i>↗</i></a>
+            </div>
+          </div>
+          <a class="btn sm pj-link" href="https://drive.google.com/drive/folders/13LQympG9orMe0MUE5THGotB9kpRaV1SM?usp=sharing" target="_blank" rel="noopener"><span data-id="Buka laporan lengkap">Open the full report</span> ↗</a>
+        </div>
+
+        <!-- P-02 -->
+        <div class="pj-panel" id="p2" role="tabpanel" aria-labelledby="t-p2" hidden>
+          <div class="pj-h"><div><span class="lab">P-02</span><h3 data-id="Konversi Honda Vario Listrik" style="margin-top:12px">Honda Vario Electric Conversion</h3><p class="pj-meta" data-id="ITS dan STP Otomotif · Mar – Jun 2026">ITS and STP Otomotif · Mar – Jun 2026</p></div></div>
+          <div class="pj-cols">
+            <div class="pj-copy">
+              <div><span class="cap" data-id="Masalah">Problem</span><p data-id="Pada pengujian, motor bensin menghabiskan Rp 222,02 per km. Proyek ini butuh penggerak listrik yang lebih murah dan tetap sanggup membawa pengendara dengan berat berbeda.">In testing, a petrol motorcycle cost IDR 222.02 per km to run. The project needed an electric drivetrain that is cheaper to run and still carries riders of different weights.</p></div>
+              <div><span class="cap" data-id="Solusi">Solution</span><p data-id="Honda Vario dikonversi dengan motor BLDC 2 kW, kontroler Votol EM-100, dan baterai LiFePO4 72 V, dilengkapi proteksi listrik dan pemantauan tegangan. Berfungsi penuh dan sudah diuji jalan untuk pemakaian harian.">A Honda Vario converted with a 2 kW BLDC motor, a Votol EM-100 controller and a 72 V LiFePO4 battery, fitted with electrical protection and voltage monitoring. Fully working and road-tested for daily use.</p></div>
+              <div class="contrib"><span class="cap" data-id="Bagian yang saya kerjakan">My part</span><p data-id="Memasang sistem propulsi: memperbaiki dan menyatukan kembali motor BLDC dan kontroler dengan baterai, lalu memasang proteksi listrik dan pemantauan tegangan.">Installed the propulsion system: repaired and reintegrated the BLDC motor and controller with the battery, then fitted electrical protection and voltage monitoring.</p></div>
+            </div>
+            <div>
+              <div class="view"><img src="img/vario.webp" alt="Converted Honda Vario" data-zoom data-cap="Completed 72 V Honda Vario electric conversion" data-cap-id="Konversi Honda Vario listrik 72 V yang sudah selesai"></div>
+              <div class="mini">
+                <div class="meter"><b>73.59%</b><span data-id="Biaya operasional lebih rendah">Lower operating cost</span></div>
+                <div class="meter"><b>58.63</b><span data-id="Rp/km listrik, dibanding 222,02 bensin">IDR/km electric vs 222.02 petrol</span></div>
+                <div class="meter"><b>51–107</b><span data-id="kg beban pengendara yang diuji">kg rider load tested</span></div>
+              </div>
+            </div>
+          </div>
+          <div style="margin-top:26px"><span class="cap" data-id="Pemasangan sistem propulsi">Propulsion system installation</span>
+            <div class="steps5">
+              <figure style="margin:0"><img src="img/v1.webp" alt="BLDC motor mounting" data-zoom data-cap="1 · BLDC motor mounting" data-cap-id="1 · Pemasangan motor BLDC"><figcaption class="fc" data-id="1 · Pemasangan motor BLDC">1 · BLDC motor mounting</figcaption></figure>
+              <figure style="margin:0"><img src="img/v2.webp" alt="CVT adjustment" data-zoom data-cap="2 · CVT adjustment" data-cap-id="2 · Penyetelan CVT"><figcaption class="fc" data-id="2 · Penyetelan CVT">2 · CVT adjustment</figcaption></figure>
+              <figure style="margin:0"><img src="img/v3.webp" alt="Controller installation" data-zoom data-cap="3 · Controller installation" data-cap-id="3 · Pemasangan kontroler"><figcaption class="fc" data-id="3 · Pemasangan kontroler">3 · Controller installation</figcaption></figure>
+              <figure style="margin:0"><img src="img/v4.webp" alt="Electrical wiring" data-zoom data-cap="4 · Electrical wiring" data-cap-id="4 · Pengawatan"><figcaption class="fc" data-id="4 · Pengawatan">4 · Electrical wiring</figcaption></figure>
+              <figure style="margin:0"><img src="img/v5.webp" alt="Controller tuning" data-zoom data-cap="5 · Controller tuning" data-cap-id="5 · Penalaan kontroler"><figcaption class="fc" data-id="5 · Penalaan kontroler">5 · Controller tuning</figcaption></figure>
+            </div>
+          </div>
+          <a class="btn sm pj-link" href="https://drive.google.com/file/d/1IrOQ0G2PJM8GM0x9iJX2I8-Zu6YiZiEA/view?usp=drive_link" target="_blank" rel="noopener"><span data-id="Buka laporan lengkap">Open the full report</span> ↗</a>
+        </div>
+
+        <!-- P-03 -->
+        <div class="pj-panel" id="p3" role="tabpanel" aria-labelledby="t-p3" hidden>
+          <div class="pj-h"><div><span class="lab">P-03</span><h3 data-id="Kendali Kecepatan PID &amp; Konveyor Pemilah" style="margin-top:12px">PID Speed Control &amp; Sorting Conveyor</h3><p class="pj-meta" data-id="Rancangan sistem kendali · ATmega328P · MATLAB/Simulink · proyek kelompok">Control system design · ATmega328P · MATLAB/Simulink · group project</p></div></div>
+          <div class="pj-cols">
+            <div class="pj-copy">
+              <div><span class="cap" data-id="Masalah">Problem</span><p data-id="Kecepatan motor berubah saat beban berubah, sehingga proses kurang stabil dan kinerja konveyor menurun.">Motor speed drifts when the load changes, which makes the process less stable and hurts conveyor performance.</p></div>
+              <div><span class="cap" data-id="Pendekatan">Approach</span><p data-id="PID dimodelkan dan disimulasikan di MATLAB/Simulink, lalu PI/PID dijalankan di ATmega328P dengan umpan balik takometer untuk kendali kecepatan motor DC dan AC.">PID was modelled and simulated in MATLAB/Simulink, then PI/PID ran on an ATmega328P with tachometer feedback for DC and AC motor speed control.</p></div>
+              <div><span class="cap" data-id="Hasil">Result</span><p data-id="Konveyor otomatis berfungsi dengan kendali kecepatan lingkar tertutup dan pemilahan logam dan non-logam memakai sensor induktif dan servo. Pengujian menunjukkan kecepatan stabil dengan galat tunak kecil.">A working automatic conveyor with closed-loop speed control and metal and non-metal sorting using an inductive sensor and a servo. Testing showed stable speed with a small steady-state error.</p></div>
+              <div class="contrib"><span class="cap" data-id="Bagian yang saya kerjakan">My part</span><p data-id="Merancang plant motor AC dan integrasi VFD dengan sistem ATmega328P, mengambil data motor, dan ikut merakit konveyor.">Designed the AC motor plant and the VFD integration with the ATmega328P system, collected motor data and helped assemble the conveyor.</p></div>
+            </div>
+            <div>
+              <div class="view"><img src="img/conveyor.webp" alt="PID motor control module with sorting conveyor" data-zoom data-cap="PID DC and AC motor learning module, ATmega328P" data-cap-id="Modul PID motor DC dan AC dengan ATmega328P"></div>
+              <div class="mini">
+                <div class="meter"><b>3.2%</b><span>Overshoot</span></div>
+                <div class="meter"><b>6.8 s</b><span data-id="Waktu tunak">Settling time</span></div>
+                <div class="meter"><b>±2 RPM</b><span data-id="Galat tunak">Steady-state error</span></div>
+              </div>
+            </div>
+          </div>
+          <a class="btn sm pj-link" href="https://docs.google.com/document/d/1cDDkdOESYxQi5Dni1WgdYepelyggfzQ8/edit?usp=sharing&amp;ouid=100986873865181942167&amp;rtpof=true&amp;sd=true" target="_blank" rel="noopener"><span data-id="Buka laporan lengkap">Open the full report</span> ↗</a>
+        </div>
+
+        <!-- P-04 -->
+        <div class="pj-panel" id="p4" role="tabpanel" aria-labelledby="t-p4" hidden>
+          <div class="pj-h"><div><span class="lab">P-04</span><h3 data-id="Pencampuran Fluida dengan Ratio Control" style="margin-top:12px">Fluid Mixing with Ratio Control</h3><p class="pj-meta" data-id="Kendali proses · MATLAB/Simulink, OpenPLC, dan ScadaBR · Modbus TCP/IP">Process control · MATLAB/Simulink, OpenPLC and ScadaBR · Modbus TCP/IP</p></div></div>
+          <div class="pj-cols">
+            <div class="pj-copy">
+              <div><span class="cap" data-id="Masalah">Problem</span><p data-id="Perbandingan cairan dasar dan pigmen yang meleset mengubah warna akhir, kekentalan, dan mutu produk.">A wrong base-to-pigment ratio changes the final colour, the viscosity and the product quality.</p></div>
+              <div><span class="cap" data-id="Pendekatan">Approach</span><p data-id="P&amp;ID dirancang, plant dimodelkan di MATLAB/Simulink, lalu kendali rasio PI dijalankan di OpenPLC lewat Modbus TCP/IP. FT-101 dan FT-102 mengukur kedua aliran, dan FCV-102 mengatur aliran pigmen ke setpoint 4:1 (0,25).">The P&amp;ID was designed, the plant modelled in MATLAB/Simulink, then PI ratio control ran on OpenPLC over Modbus TCP/IP. FT-101 and FT-102 measure the two flows, and FCV-102 regulates pigment flow to a 4:1 (0.25) setpoint.</p></div>
+              <div><span class="cap" data-id="Hasil">Result</span><p data-id="Pada aliran dasar 400 L/menit, aliran pigmen bertahan di 100 L/menit. Penalaan Kp = 3 dan Ki = 0,5 memberi respons halus dengan overshoot minimal dan waktu tunak di bawah 20 detik.">At a base flow of 400 L/min the pigment flow held at 100 L/min. Tuning at Kp = 3 and Ki = 0.5 gave a smooth response with minimal overshoot and settling under 20 s.</p></div>
+              <div class="contrib"><span class="cap" data-id="Bagian yang saya kerjakan">My part</span><p data-id="Merancang dan mensimulasikan sistem kendali rasio PI dengan MATLAB/Simulink dan OpenPLC.">Designed and simulated the PI ratio control system in MATLAB/Simulink and OpenPLC.</p></div>
+            </div>
+            <div>
+              <div class="view"><img class="wh" src="img/ratio.webp" alt="Ratio control block diagram for the liquid mixing process" data-zoom data-cap="Ratio control block diagram for the liquid mixing process" data-cap-id="Diagram blok kendali rasio untuk proses pencampuran cairan"></div>
+              <div class="mini">
+                <div class="meter"><b>4 : 1</b><span data-id="Rasio dasar : pigmen">Base : pigment ratio</span></div>
+                <div class="meter"><b>&lt; 20 s</b><span data-id="Waktu tunak">Settling time</span></div>
+                <div class="meter"><b>3 / 0.5</b><span data-id="Penguatan PI, Kp / Ki">PI gains, Kp / Ki</span></div>
+              </div>
+            </div>
+          </div>
+          <div class="sect"><span class="cap" data-id="Penalaan: Ziegler–Nichols dan fine-tuning">Tuning: Ziegler–Nichols and fine-tuning</span>
+            <p style="margin-top:7px;font-size:17px" data-id="Perhitungan Ziegler–Nichols menghasilkan Kp 9,85 dan Ki 3,54 dengan respons yang lebih berosilasi. Fine-tuning ke Kp 3 dan Ki 0,5 memberi respons yang lebih halus, di bawah ini pada kondisi nominal dan saat aliran base naik.">The Ziegler–Nichols calculation gave Kp 9.85 and Ki 3.54 with a more oscillatory response. Fine-tuning to Kp 3 and Ki 0.5 gave a smoother one, shown below at nominal conditions and when the base flow rises.</p>
+            <div class="gal p2">
+              <figure><img src="img/pi1.webp" alt="Nominal response, fine-tuned PI" data-zoom data-cap="Nominal response with fine-tuned PI (Kp 3, Ki 0.5)" data-cap-id="Respons nominal dengan PI hasil fine-tuning (Kp 3, Ki 0,5)"><figcaption class="fc" data-id="Respons nominal">Nominal response</figcaption></figure>
+              <figure><img src="img/pi2.webp" alt="Response to a base-flow increase, fine-tuned PI" data-zoom data-cap="Response to a rise in base flow with fine-tuned PI (Kp 3, Ki 0.5)" data-cap-id="Respons terhadap kenaikan aliran base dengan PI hasil fine-tuning (Kp 3, Ki 0,5)"><figcaption class="fc" data-id="Aliran base naik">Base flow rises</figcaption></figure>
+            </div>
+          </div>
+          <a class="btn sm pj-link" href="https://docs.google.com/document/d/1IPYPRMcoTYNPbejGf6juusiB5uTvQjRJ/edit?usp=sharing&amp;ouid=100986873865181942167&amp;rtpof=true&amp;sd=true" target="_blank" rel="noopener"><span data-id="Buka laporan lengkap">Open the full report</span> ↗</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 04 SKILLS -->
+<section class="sheet" id="skills">
+  <div class="wrap sheet-grid">
+    <div class="rail" aria-hidden="true"><i class="node"></i></div>
+    <div class="sbody">
+      <div class="sh"><h2 data-id="Keahlian">Skills</h2><p data-id="Setiap kelompok keahlian diberi tautan ke tempat saya memakainya.">Each group of skills links to the place where I used it.</p></div>
+      <div class="mx">
+        <div class="mrow hd"><div data-id="Bidang">Area</div><div data-id="Kemampuan">Capabilities</div><div data-id="Dipakai di">Used in</div></div>
+        <div class="mrow">
+          <div><h4 data-id="Instalasi dan pengujian listrik">Electrical installation and testing</h4><p class="g" data-id="Pekerjaan lapangan sesuai prosedur K3">Field work under K3 procedures</p></div>
+          <div class="tg"><span data-id="Pengawatan dan terminasi panel">Panel wiring and termination</span><span data-id="Kabel NYFGbY">NYFGbY cable</span><span data-id="Inspeksi pembumian">Grounding inspection</span><span data-id="Uji tahanan isolasi (megger)">Insulation test (megger)</span><span data-id="Pengukuran multimeter">Multimeter measurement</span><span data-id="Jaringan PLN, SUTR, kWh meter">PLN network, SUTR, kWh meter</span></div>
+          <div class="seen"><a href="#experience" data-id="Magang PKL">PKL internship</a></div>
+        </div>
+        <div class="mrow">
+          <div><h4 data-id="Kendali dan otomasi">Control and automation</h4><p class="g" data-id="Pemodelan, penalaan, implementasi">Modelling, tuning, implementation</p></div>
+          <div class="tg"><span data-id="Penalaan PID dan PI">PID and PI tuning</span><span>Ziegler–Nichols</span><span>Ratio control</span><span>MATLAB / Simulink</span><span>OpenPLC · ScadaBR</span><span>Modbus TCP/IP</span><span>P&amp;ID</span></div>
+          <div class="seen"><button type="button" data-goto="p3">P-03</button><button type="button" data-goto="p4">P-04</button></div>
+        </div>
+        <div class="mrow">
+          <div><h4 data-id="Penggerak dan instrumentasi">Drives and instrumentation</h4><p class="g" data-id="Motor, kontroler, sensor">Motors, controllers, sensors</p></div>
+          <div class="tg"><span data-id="Motor DC dan AC (VFD)">DC and AC motors (VFD)</span><span>BLDC · PMSM</span><span>LiFePO4 · BMS</span><span>ATmega328P</span><span>ESP32 · Nextion</span><span>CAN bus</span><span data-id="Sensor induktif, takometer">Inductive sensor, tachometer</span><span data-id="Proteksi dan pemantauan tegangan">Protection, voltage monitoring</span></div>
+          <div class="seen"><button type="button" data-goto="p1">P-01</button><button type="button" data-goto="p2">P-02</button><button type="button" data-goto="p3">P-03</button></div>
+        </div>
+        <div class="mrow">
+          <div><h4 data-id="Perangkat lunak dan dokumentasi">Software and documentation</h4><p class="g" data-id="Desain, pemrograman, pelaporan">Design, programming, reporting</p></div>
+          <div class="tg"><span>Arduino IDE</span><span>Proteus</span><span>Multisim</span><span>KiCad</span><span>Fusion 360</span><span>Python</span><span>OpenCV</span><span>VS Code</span><span>Microsoft Office</span><span>Canva</span><span data-id="RAB dan laporan arus kas">RAB and cash-flow reports</span></div>
+          <div class="seen"><button type="button" data-goto="p1">P-01</button><a href="#organization" data-id="Organisasi">Organization</a></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 05 AWARDS -->
+<section class="sheet" id="awards">
+  <div class="wrap sheet-grid">
+    <div class="rail" aria-hidden="true"><i class="node"></i></div>
+    <div class="sbody">
+      <div class="sh"><h2 data-id="Penghargaan dan sertifikasi">Awards and certification</h2></div>
+      <div class="aw-grid">
+        <div class="plates">
+          <article class="plate-row">
+            <div class="ord">1st<small data-id="Juara">Place</small></div>
+            <div><span class="mono muted">6 Jul 2026</span><h3 data-id="Design Thinking 2026">Design Thinking 2026</h3><p data-id="Tim Traktor Nyeni. DTEO ITS bersama Higher Colleges of Technology (UAE) dan REDESMA Technologies.">Team Traktor Nyeni. DTEO ITS with Higher Colleges of Technology (UAE) and REDESMA Technologies.</p></div>
+            <div><img src="img/aw1.webp" alt="Design Thinking 2026 certificate" data-zoom data-cap="Design Thinking 2026, 1st place, Traktor Nyeni Team" data-cap-id="Design Thinking 2026, Juara 1, Tim Traktor Nyeni"></div>
+          </article>
+          <article class="plate-row">
+            <div class="ord">1st<small data-id="Juara">Place</small></div>
+            <div><span class="mono muted">FIPEC 2026</span><h3 data-id="Proyek Paling Inovatif, FIPEC 2026">Most Innovative Project, FIPEC 2026</h3><p data-id="Tim PjBL 4-30, kategori terbaik semester 4, untuk Traktor Perahu Listrik (P-01).">Team PjBL 4-30, best project of semester 4, for the Electric Boat-Tractor (P-01).</p></div>
+            <div><img src="img/aw2.webp" alt="FIPEC 2026 certificate" data-zoom data-cap="Project Terinovatif, FIPEC 2026, Team PjBL 4-30" data-cap-id="Project Terinovatif, FIPEC 2026, Tim PjBL 4-30"></div>
+          </article>
+          <article class="plate-row">
+            <div class="ord">Best<small data-id="Makalah">Paper</small></div>
+            <div><span class="mono muted">1 Feb – 5 Mar 2025</span><h3>National Essay Olympiad (NEO) 2025</h3><p data-id="Best Paper tingkat nasional dari Indonesian Youth Inventors Forum (IYIF).">Best Paper at national level from the Indonesian Youth Inventors Forum (IYIF).</p></div>
+            <div><img src="img/aw3.webp" alt="NEO 2025 certificate" data-zoom data-cap="Best Paper, National Essay Olympiad 2025" data-cap-id="Best Paper, National Essay Olympiad 2025"></div>
+          </article>
+          <article class="plate-row">
+            <div class="ord">Best<small data-id="Staf">Staff</small></div>
+            <div><span class="mono muted">HMDTEO · 2026/2027</span><h3 data-id="Best Staff, Ekonomi Kreatif">Best Staff, Creative Economy</h3><p data-id="Kabinet Harmoni Progresif 2026/2027 Vol 1.0, HMDTEO.">Harmoni Progresif Cabinet 2026/2027 Vol 1.0, HMDTEO.</p><a class="lk" href="https://www.instagram.com/p/DcXvNfvjwr2/?img_index=3" target="_blank" rel="noopener"><span data-id="Lihat di Instagram">View on Instagram</span> ↗</a></div>
+            <div><img src="img/besthmd.webp" alt="Best Staff certificate graphic, HMDTEO" data-zoom data-cap="Best Staff, Creative Economy, HMDTEO Harmoni Progresif Cabinet 2026/2027 Vol 1.0" data-cap-id="Best Staff, Ekonomi Kreatif, HMDTEO Kabinet Harmoni Progresif 2026/2027 Vol 1.0"></div>
+          </article>
+        </div>
+        <article class="cert">
+          <span class="lab" data-id="Sertifikasi">Certification</span>
+          <h3>Python Developer Certification</h3>
+          <p class="muted" style="font-size:14.5px" data-id="freeCodeCamp · 19 Maret 2026 · sekitar 300 jam pengerjaan">freeCodeCamp · 19 March 2026 · about 300 hours of work</p>
+          <img src="img/fcc.webp" alt="freeCodeCamp Python certificate" data-zoom data-cap="freeCodeCamp Python Developer Certification" data-cap-id="Sertifikasi Python Developer freeCodeCamp" style="aspect-ratio:auto;object-fit:contain">
+          <a class="btn sm" style="justify-self:start" href="https://freecodecamp.org/certification/fcc-7d3914da-4d4f-4863-a328-ab284bfff6be/python-v9" target="_blank" rel="noopener"><span data-id="Verifikasi di freecodecamp.org">Verify on freecodecamp.org</span> ↗</a>
+        </article>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 06 ORGANIZATION -->
+<section class="sheet" id="organization">
+  <div class="wrap sheet-grid">
+    <div class="rail" aria-hidden="true"><i class="node"></i></div>
+    <div class="sbody">
+      <div class="sh"><h2 data-id="Organisasi dan kepanitiaan">Organization and committees</h2></div>
+      <div class="orgs o3">
+        <article>
+          <img src="img/org_stp.webp" alt="STP Otomotif team" data-zoom data-cap="STP Otomotif team" data-cap-id="Tim STP Otomotif">
+          <div class="b">
+            <span class="cap">2026 – <span data-id="sekarang">now</span></span>
+            <h3>STP Otomotif</h3>
+            <p class="rl" data-id="Kepala Divisi Keuangan &amp; Administrasi">Head of Finance &amp; Administration Division</p>
+            <ul class="bul">
+              <li data-id="Mengoordinasikan pengajuan dan administrasi pendanaan PLN ICE 2026 senilai Rp 30 juta sampai disetujui.">Coordinated the submission and administration of PLN ICE 2026 funding worth IDR 30 million until approved.</li>
+              <li data-id="Menyusun Rencana Anggaran Biaya (RAB) per tahap proyek dan memantau realisasinya untuk melihat progres dan peluang efisiensi biaya.">Developed a Cost Budget Plan (RAB) per project stage and monitored its realisation to track progress and spot cost efficiencies.</li>
+              <li data-id="Mengelola laporan keuangan dan dokumentasi kerja sama STP Otomotif – HETI senilai Rp 120 juta.">Managed financial reporting and documentation of the STP Otomotif – HETI cooperation, worth IDR 120 million.</li>
+              <li data-id="Mengelola surat-menyurat, arsip, dan kelengkapan dokumen sesuai prosedur dan tenggat.">Managed correspondence, archives and document completeness according to procedures and deadlines.</li>
+            </ul>
+          </div>
+        </article>
+        <article>
+          <img src="img/ekraf.webp" alt="HMDTEO Creative Economy (Ekraf) team" data-zoom data-cap="HMDTEO Creative Economy (Ekraf) team" data-cap-id="Tim Ekonomi Kreatif (Ekraf) HMDTEO">
+          <div class="b">
+            <span class="cap">2026 – <span data-id="sekarang">now</span></span>
+            <h3>HMDTEO</h3>
+            <p class="rl" data-id="Staf Ekonomi Kreatif · Kabinet Harmoni Progresif 2026/2027">Creative Economy Staff · Harmoni Progresif Cabinet 2026/2027</p>
+            <ul class="bul">
+              <li data-id="Menghasilkan pendapatan lebih dari Rp 20 juta dari penjualan produk, mulai dari perencanaan penjualan sampai pencatatan transaksi.">Generated revenue of more than IDR 20 million through product sales, from sales planning to transaction recording.</li>
+              <li data-id="Menyusun dan memantau catatan arus kas (modal awal, pemasukan, biaya operasional, laba) untuk mendukung kontrol keuangan.">Compiled and monitored cash flow records (initial capital, income, operating expenses, profit) to support financial control.</li>
+              <li data-id="Menganalisis arus kas untuk memantau perputaran modal dan mengevaluasi pemasukan, pengeluaran, dan laba.">Analysed cash flow to monitor capital turnover and evaluate income, expenses and profit.</li>
+            </ul>
+            <div class="cta"><a class="btn" href="https://www.instagram.com/p/DWj0FTYkv9o/?img_index=2" target="_blank" rel="noopener"><span data-id="Lihat postingan tim">View the team post</span> ↗</a></div>
+          </div>
+        </article>
+        <article>
+          <img src="img/org_lab.webp" alt="Laboratory assistants" style="object-position:center 88%" data-zoom data-cap="Cyber Physical Industrial Robotics and Automation Laboratory, ITS" data-cap-id="Lab. Cyber Physical Industrial Robotics and Automation, ITS">
+          <div class="b">
+            <span class="cap">2026 – <span data-id="sekarang">now</span></span>
+            <h3 data-id="Asisten Laboratorium">Laboratory Assistant</h3>
+            <p class="rl">Lab. Cyber Physical Industrial Robotics and Automation, ITS</p>
+            <ul class="bul">
+              <li data-id="Menerapkan prosedur keselamatan laboratorium untuk mendukung kegiatan praktikum.">Implemented laboratory safety procedures to support practicum activities.</li>
+              <li data-id="Menyusun jadwal praktikum dan berkoordinasi dengan pihak terkait agar kegiatan tetap sesuai jadwal.">Arranged practicum schedules and coordinated with related parties to keep activities on schedule.</li>
+              <li data-id="Mengelola inventaris peralatan dan catatan administrasi agar aset tetap tersedia dan dapat dilacak.">Managed equipment inventory and administrative records so assets stay available and traceable.</li>
+              <li data-id="Menjaga dokumentasi laboratorium secara sistematis agar catatan akurat dan terbarui.">Maintained laboratory documentation systematically so records stay accurate and up to date.</li>
+            </ul>
+          </div>
+        </article>
+      </div>
+      <h3 class="sub" data-id="Kepanitiaan DTEO">DTEO committees</h3>
+      <div class="cm">
+        <figure style="margin:0"><img src="img/c1.webp" alt="OK2BK 2025 certificate" data-zoom data-cap="Health Staff, OK2BK DTEO 2025" data-cap-id="Staf Kesehatan, OK2BK DTEO 2025"><h4 data-id="Staf Kesehatan">Health Staff</h4><p>OK2BK DTEO 2025</p><p class="ct-d" data-id="Memastikan kesiapan kesehatan peserta dan memberi dukungan medis selama kegiatan.">Ensured participants' health readiness and gave medical support during activities.</p></figure>
+        <figure style="margin:0"><img src="img/c2.webp" alt="Tasyukuran Wisuda 132 certificate" data-zoom data-cap="Consumption Staff, Tasyukuran Wisuda 132 DTEO, 27 September 2025" data-cap-id="Staf Konsumsi, Tasyukuran Wisuda 132 DTEO, 27 September 2025"><h4 data-id="Staf Konsumsi">Consumption Staff</h4><p>Tasyukuran Wisuda 132 · Sep 2025</p><p class="ct-d" data-id="Mengatur distribusi makanan peserta acara agar tertib dan tepat waktu.">Managed organised, timely food distribution for event participants.</p></figure>
+        <figure style="margin:0"><img src="img/c3.webp" alt="IARC XI certificate" data-zoom data-cap="Decoration Division Staff, Industrial Automation and Robotic Competition (IARC) XI, 10 January 2026" data-cap-id="Staf Divisi Dekorasi, Industrial Automation and Robotic Competition (IARC) XI, 10 Januari 2026"><h4 data-id="Staf Divisi Dekorasi">Decoration Division Staff</h4><p>IARC XI · <span data-id="Jan 2026">Jan 2026</span></p><p class="ct-d" data-id="Berkontribusi pada persiapan lokasi dan pelaksanaan acara.">Contributed to venue preparation and event execution.</p></figure>
+        <figure style="margin:0"><img src="img/c4.webp" alt="DTEO CUP 2026 certificate" data-zoom data-cap="Consumption and Medical Division Expert Staff, DTEO CUP 2026, 27 to 28 August 2026" data-cap-id="Staf Ahli Divisi Konsumsi dan Medis, DTEO CUP 2026, 27 sampai 28 Agustus 2026"><h4 data-id="Staf Ahli Konsumsi dan Medis">Consumption and Medical Expert Staff</h4><p>DTEO CUP 2026 · <span data-id="Agu 2026">Aug 2026</span></p><p class="ct-d" data-id="Mengelola distribusi konsumsi dan layanan kesehatan peserta turnamen.">Managed catering distribution and participant healthcare for the tournament.</p></figure>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<!-- 07 CONTACT -->
+<section class="sheet contact" id="contact">
+  <div class="wrap sheet-grid">
+    <div class="rail" aria-hidden="true"><i class="node"></i>
+      <svg class="gnd" viewBox="0 0 28 22" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" style="color:var(--wire)"><path d="M14 0v8M3 8h22M7 13h14M11 18h6"/></svg>
+    </div>
+    <div class="sbody">
+      <div class="sh">
+        <h2 data-id="Mari pasang<br><em>sesuatu.</em>">Let's wire<br><em>something up.</em></h2>
+        <p class="sub2" data-id="Saya mencari magang di bidang kelistrikan, otomasi, dan instrumentasi. Saya juga terbuka untuk kolaborasi proyek konversi kendaraan listrik dan sistem kendali.">I am looking for an internship in electrical, automation and instrumentation engineering. I am also open to collaboration on EV conversion and control-system projects.</p>
+      </div>
+      <div class="cta" style="margin-top:0">
+        <button class="btn solid" id="copyMail" type="button"><span id="copyTxt" data-label>Copy email address</span></button>
+        <a class="btn" href="https://wa.me/6285812424152" target="_blank" rel="noopener"><span data-id="Chat WhatsApp">Chat on WhatsApp</span> ↗</a>
+        <a class="btn" href="https://drive.google.com/file/d/1TuguTHDbuEeu8c8XI6AW23fM2Y35EsBU/view?usp=sharing" target="_blank" rel="noopener"><span data-id="Lihat CV">View CV</span> ↗</a>
+      </div>
+      <dl class="ct">
+        <div><dt>Email</dt><dd><a href="mailto:galihwahyu892@gmail.com">galihwahyu892@gmail.com</a></dd></div>
+        <div><dt>WhatsApp</dt><dd class="num"><a href="https://wa.me/6285812424152" target="_blank" rel="noopener">+62 858-1242-4152</a></dd></div>
+        <div><dt>LinkedIn</dt><dd><a href="https://www.linkedin.com/in/galih-wahyu-nugroho" target="_blank" rel="noopener">galih-wahyu-nugroho</a></dd></div>
+      </dl>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap"><div><b>Galih Wahyu Nugroho</b><p>© 2026 · D4 Electrical Automation Engineering, ITS Surabaya</p></div><label class="gl"><span>Liquid Glass</span><input id="glass" type="range" min="0" max="100" value="45" aria-label="Liquid Glass transparency"></label></div>
+</footer>
+
+<button id="to-top" type="button" aria-label="Back to top"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4l8 8h-5v8h-6v-8H4z"/></svg></button>
+
+<dialog id="lb" aria-label="Image preview">
+  <button type="button" id="lbX">Close ✕</button>
+  <img id="lbImg" alt="">
+  <p id="lbCap"></p>
+</dialog>
+
+<script>
+(function(){
+  "use strict";
+  var root=document.documentElement;
+  function $(s,c){return (c||document).querySelector(s);}
+  function $$(s,c){return [].slice.call((c||document).querySelectorAll(s));}
+
+  /* ---------- theme ---------- */
+  var sun='<path d="M12 8a4 4 0 100 8 4 4 0 000-8zM11 1h2v3h-2zM11 20h2v3h-2zM1 11h3v2H1zM20 11h3v2h-3zM4.2 5.6l1.4-1.4 2.1 2.1-1.4 1.4zM16.3 17.7l1.4-1.4 2.1 2.1-1.4 1.4zM18.4 4.2l1.4 1.4-2.1 2.1-1.4-1.4zM6.3 16.3l1.4 1.4-2.1 2.1-1.4-1.4z"/>';
+  var moon='<path d="M21 12.8A9 9 0 1111.2 3a7 7 0 009.8 9.8z"/>';
+  var icon=$('#themeIcon');
+  function setTheme(t){ root.setAttribute('data-theme',t); icon.innerHTML=(t==='dark')?sun:moon; try{localStorage.setItem('gwn-theme',t);}catch(e){} }
+  var st=null; try{st=localStorage.getItem('gwn-theme');}catch(e){}
+  setTheme(st||((window.matchMedia&&matchMedia('(prefers-color-scheme: dark)').matches)?'dark':'light'));
+  $('#theme').addEventListener('click',function(){ setTheme(root.getAttribute('data-theme')==='dark'?'light':'dark'); });
+
+  /* ---------- language ---------- */
+  var tNodes=$$('[data-id]');
+  tNodes.forEach(function(n){ n.setAttribute('data-en',n.innerHTML); });
+  var zNodes=$$('[data-cap-id]');
+  var lang='en';
+  var copyLabel={en:'Copy email address',id:'Salin alamat email'};
+  var copyDone={en:'Email address copied',id:'Alamat email tersalin'};
+  function setLang(l){
+    lang=l;
+    tNodes.forEach(function(n){ n.innerHTML=n.getAttribute(l==='id'?'data-id':'data-en'); });
+    root.setAttribute('lang',l);
+    $('#lang').setAttribute('data-lang',l);
+    $('#copyTxt').textContent=copyLabel[l];
+    try{localStorage.setItem('gwn-lang',l);}catch(e){}
+    drawScope(1);
+  }
+  $('#lang').addEventListener('click',function(){ setLang(lang==='en'?'id':'en'); });
+
+  /* ---------- scroll: progress, active link, back to top ---------- */
+  var prog=$('#prog'), toTop=$('#to-top');
+  var links=$$('.strip a'), targets=links.map(function(a){return $(a.getAttribute('href'));});
+  var tick=false;
+  function onScroll(){
+    var y=window.scrollY||0, h=document.documentElement.scrollHeight-window.innerHeight;
+    prog.style.width=(h>0?y/h*100:0)+'%';
+    toTop.classList.toggle('show',y>700);
+    var cur=-1;
+    for(var i=0;i<targets.length;i++){ if(targets[i]&&targets[i].getBoundingClientRect().top<=140) cur=i; }
+    links.forEach(function(a,i){ a.classList.toggle('on',i===cur); });
+    tick=false;
+  }
+  window.addEventListener('scroll',function(){ if(!tick){tick=true;requestAnimationFrame(onScroll);} },{passive:true});
+  window.addEventListener('resize',onScroll);
+  toTop.addEventListener('click',function(){ window.scrollTo({top:0,behavior:'smooth'}); });
+
+  /* ---------- project tabs ---------- */
+  var tabs=$$('.pj-list [role=tab]'), panels=$$('.pj-panel');
+  function selectProj(id,focus){
+    tabs.forEach(function(t){ var on=t.getAttribute('data-proj')===id; t.setAttribute('aria-selected',on?'true':'false'); t.tabIndex=on?0:-1; if(on&&focus) t.focus(); });
+    panels.forEach(function(p){ p.hidden=(p.id!==id); });
+  }
+  tabs.forEach(function(t,i){
+    t.tabIndex=i===0?0:-1;
+    t.addEventListener('click',function(){ selectProj(t.getAttribute('data-proj')); });
+    t.addEventListener('keydown',function(e){
+      var k=e.key, n=tabs.length, j=tabs.indexOf(t);
+      if(k==='ArrowDown'||k==='ArrowRight'){ e.preventDefault(); selectProj(tabs[(j+1)%n].getAttribute('data-proj'),true); }
+      if(k==='ArrowUp'||k==='ArrowLeft'){ e.preventDefault(); selectProj(tabs[(j-1+n)%n].getAttribute('data-proj'),true); }
+    });
+  });
+  $$('[data-goto]').forEach(function(b){
+    b.addEventListener('click',function(){
+      selectProj(b.getAttribute('data-goto'));
+      var s=$('#projects'); if(s) s.scrollIntoView({behavior:'smooth'});
+    });
+  });
+
+  /* ---------- lightbox ---------- */
+  var lb=$('#lb'), lbImg=$('#lbImg'), lbCap=$('#lbCap');
+  var modal=lb&&typeof lb.showModal==='function';
+  document.addEventListener('click',function(e){
+    var im=e.target.closest?e.target.closest('img[data-zoom]'):null;
+    if(!im||!modal) return;
+    lbImg.src=im.getAttribute('src'); lbImg.alt=im.alt;
+    lbCap.textContent=(lang==='id'&&im.getAttribute('data-cap-id'))?im.getAttribute('data-cap-id'):(im.getAttribute('data-cap')||im.alt);
+    try{lb.showModal();}catch(err){}
+  });
+  if(modal){
+    $('#lbX').addEventListener('click',function(){ lb.close(); });
+    lb.addEventListener('click',function(e){ if(e.target===lb) lb.close(); });
+  }
+
+  /* ---------- copy email ---------- */
+  var cb=$('#copyMail'), ct=$('#copyTxt'), mail='galihwahyu892@gmail.com';
+  cb.addEventListener('click',function(){
+    if(navigator.clipboard&&navigator.clipboard.writeText){
+      navigator.clipboard.writeText(mail).then(function(){
+        ct.textContent=copyDone[lang]; setTimeout(function(){ ct.textContent=copyLabel[lang]; },1800);
+      }).catch(function(){ ct.textContent=mail; });
+    } else { ct.textContent=mail; }
+  });
+
+  /* ---------- control-loop scope ---------- */
+  var cv=$('#scope'), cx=cv.getContext('2d');
+  var kpIn=$('#kp'), kiIn=$('#ki'), ldIn=$('#ld');
+  var T=22, DT=0.005, STEP_T=1, LOAD_T=11, LOAD=0.3;
+  var reduce=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var res=null;
+  function simulate(kp,ki,load){
+    var N=Math.round(T/DT), yc=new Float32Array(N+1), yo=new Float32Array(N+1);
+    var x1=0,x2=0,I=0,o1=0,o2=0;
+    for(var k=0;k<=N;k++){
+      var t=k*DT, r=t>=STEP_T?1:0, d=(load&&t>=LOAD_T)?LOAD:0;
+      // plant G(s)=1/((s+1)(0.5s+1)), disturbance enters at the plant input
+      var e=r-x2; I+=ki*e*DT; var u=kp*e+I; if(u>10)u=10; if(u<-10)u=-10;
+      x1+=DT*((u-d)-x1); x2+=DT*(x1-x2)/0.5; yc[k]=x2;
+      o1+=DT*((r-d)-o1); o2+=DT*(o1-o2)/0.5; yo[k]=o2;
+    }
+    // metrics on the step window [STEP_T, LOAD_T)
+    var a=Math.round(STEP_T/DT), b=Math.round(LOAD_T/DT), mx=0, last=-1;
+    for(var i=a;i<b;i++){ if(yc[i]>mx) mx=yc[i]; if(Math.abs(yc[i]-1)>0.02) last=i; }
+    var os=Math.max(0,(mx-1)*100);
+    var settle = (last<0)?0:((last>=b-2)?null:(last*DT-STEP_T));
+    var dip=null;
+    if(load){ var mn=1; for(var j=b;j<=N;j++){ if(yc[j]<mn) mn=yc[j]; } dip=(1-mn)*100; }
+    return {yc:yc,yo:yo,N:N,os:os,settle:settle,dip:dip};
+  }
+  function css(){ var dpr=window.devicePixelRatio||1, w=cv.clientWidth, h=cv.clientHeight; if(cv.width!==Math.round(w*dpr)||cv.height!==Math.round(h*dpr)){ cv.width=Math.round(w*dpr); cv.height=Math.round(h*dpr);} cx.setTransform(dpr,0,0,dpr,0,0); return {w:w,h:h}; }
+  function drawScope(p){
+    if(!res) return;
+    var s=css(), W=s.w, H=s.h, padL=34, padR=10, padT=10, padB=24;
+    var pw=W-padL-padR, ph=H-padT-padB, YMIN=-0.05, YMAX=1.5;
+    function X(t){return padL+t/T*pw;}
+    function Y(v){ v=Math.max(YMIN-0.05,Math.min(YMAX+0.05,v)); return padT+(YMAX-v)/(YMAX-YMIN)*ph; }
+    cx.clearRect(0,0,W,H);
+    cx.fillStyle='#0a0d14'; cx.fillRect(0,0,W,H);
+    // graticule
+    cx.lineWidth=1; cx.strokeStyle='rgba(120,150,170,.16)';
+    for(var gx=0;gx<=T;gx+=2){ cx.beginPath(); cx.moveTo(X(gx)+.5,padT); cx.lineTo(X(gx)+.5,padT+ph); cx.stroke(); }
+    for(var gy=0;gy<=1.5;gy+=0.25){ cx.beginPath(); cx.moveTo(padL,Y(gy)+.5); cx.lineTo(padL+pw,Y(gy)+.5); cx.stroke(); }
+    cx.strokeStyle='rgba(150,180,200,.38)'; cx.beginPath(); cx.moveTo(padL,Y(0)+.5); cx.lineTo(padL+pw,Y(0)+.5); cx.stroke();
+    // labels
+    cx.fillStyle='#8d99a3'; cx.font='500 11px -apple-system,"Inter",system-ui,sans-serif'; cx.textAlign='right'; cx.textBaseline='middle';
+    [0,0.5,1,1.5].forEach(function(v){ cx.fillText(v.toFixed(1),padL-6,Y(v)); });
+    cx.textAlign='center'; cx.textBaseline='top';
+    [0,5,10,15,20].forEach(function(t){ cx.fillText(t+' s',X(t),padT+ph+6); });
+    // band +-2%
+    cx.fillStyle='rgba(48,209,88,.09)'; cx.fillRect(padL,Y(1.02),pw,Y(0.98)-Y(1.02));
+    // setpoint
+    cx.save(); cx.setLineDash([2,4]); cx.strokeStyle='#30d158'; cx.lineWidth=1.6; cx.beginPath();
+    cx.moveTo(X(0),Y(0)); cx.lineTo(X(STEP_T),Y(0)); cx.lineTo(X(STEP_T),Y(1)); cx.lineTo(X(T),Y(1)); cx.stroke(); cx.restore();
+    // load marker
+    if(ldIn.checked){
+      cx.save(); cx.setLineDash([5,4]); cx.strokeStyle='rgba(255,69,58,.8)'; cx.lineWidth=1.2; cx.beginPath(); cx.moveTo(X(LOAD_T),padT); cx.lineTo(X(LOAD_T),padT+ph); cx.stroke(); cx.restore();
+      cx.fillStyle='#ff6b61'; cx.textAlign='left'; cx.textBaseline='top'; cx.fillText(lang==='id'?'BEBAN':'LOAD',X(LOAD_T)+5,padT+4);
+    }
+    var N=res.N, last=Math.floor(N*p);
+    function trace(arr,color,w,dash,glow){
+      cx.save(); cx.lineWidth=w; cx.strokeStyle=color; cx.lineJoin='round'; if(dash) cx.setLineDash(dash);
+      if(glow){ cx.shadowColor=color; cx.shadowBlur=8; }
+      cx.beginPath(); var step=Math.max(1,Math.floor(N/900));
+      for(var i=0;i<=last;i+=step){ var x=X(i*DT), y=Y(arr[i]); if(i===0) cx.moveTo(x,y); else cx.lineTo(x,y); }
+      cx.stroke(); cx.restore();
+    }
+    trace(res.yo,'#9aa7b1',2,[7,5],false);
+    trace(res.yc,'#3d9aff',2.6,null,true);
+  }
+  function fmtS(v){ return v===null?'> 10 s':(v.toFixed(1)+' s'); }
+  function update(anim){
+    var kp=parseFloat(kpIn.value), ki=parseFloat(kiIn.value), load=ldIn.checked;
+    fill(kpIn); fill(kiIn);
+    $('#kpv').textContent=kp.toFixed(1); $('#kiv').textContent=ki.toFixed(2);
+    res=simulate(kp,ki,load);
+    $('#rOs').textContent=res.os.toFixed(1)+'%';
+    $('#rSt').textContent=fmtS(res.settle);
+    $('#rDip').textContent=(res.dip===null)?'—':(res.dip.toFixed(1)+'%');
+    cv.setAttribute('aria-label','Step response, Kp '+kp.toFixed(1)+', Ki '+ki.toFixed(2)+'. Overshoot '+res.os.toFixed(1)+' percent, settling '+(res.settle===null?'longer than 10 seconds':res.settle.toFixed(1)+' seconds')+(load?', load dip '+res.dip.toFixed(1)+' percent':'')+'.');
+    $$('.chipbtn').forEach(function(b){ var v=b.getAttribute('data-p').split(','); b.classList.toggle('on',parseFloat(v[0])===kp&&parseFloat(v[1])===ki); });
+    if(anim&&!reduce){
+      var t0=null, dur=1100;
+      (function frame(ts){ if(t0===null) t0=ts; var p=Math.min(1,(ts-t0)/dur); drawScope(p); if(p<1) requestAnimationFrame(frame); })(performance.now());
+    } else { drawScope(1); }
+  }
+  [kpIn,kiIn,ldIn].forEach(function(el){ el.addEventListener('input',function(){ update(false); }); });
+  $$('.chipbtn').forEach(function(b){ b.addEventListener('click',function(){ var v=b.getAttribute('data-p').split(','); kpIn.value=v[0]; kiIn.value=v[1]; update(false); }); });
+  window.addEventListener('resize',function(){ drawScope(1); });
+
+  /* ---------- slider fill + glass strength ---------- */
+  function fill(el){ el.style.setProperty('--p',((el.value-el.min)/(el.max-el.min)*100)+'%'); }
+  var gIn=$('#glass');
+  var noGlass=(window.matchMedia&&matchMedia('(prefers-reduced-transparency: reduce)').matches)||!(window.CSS&&CSS.supports&&(CSS.supports('backdrop-filter','blur(2px)')||CSS.supports('-webkit-backdrop-filter','blur(2px)')));
+  function setGlass(v){
+    v=Math.max(0,Math.min(100,+v)||0); gIn.value=v; fill(gIn);
+    if(!noGlass){ root.style.setProperty('--ga',(0.93-v/100*0.63).toFixed(3)); root.style.setProperty('--gb',(12+v*0.3).toFixed(1)+'px'); }
+    try{localStorage.setItem('gwn-glass',String(v));}catch(e){}
+  }
+  gIn.addEventListener('input',function(){ setGlass(gIn.value); });
+  var sg=null; try{sg=localStorage.getItem('gwn-glass');}catch(e){}
+  setGlass(sg!==null&&sg!==''?sg:45);
+
+  /* ---------- boot ---------- */
+  var sl=null; try{sl=localStorage.getItem('gwn-lang');}catch(e){}
+  update(true);
+  if(sl==='id') setLang('id');
+  onScroll();
+  if(document.fonts&&document.fonts.ready){ document.fonts.ready.then(function(){ drawScope(1); }); }
+})();
+</script>
+<script>
+(function(){
+  var root=document.documentElement;
+  if(!root.classList.contains('mo')) return;
+  var $=function(q,c){return (c||document).querySelector(q);};
+  var $$=function(q,c){return Array.prototype.slice.call((c||document).querySelectorAll(q));};
+
+  /* count-up for numeric figures */
+  function parse(b){
+    var t=b.textContent.trim(), m=t.match(/\d[\d,]*(?:\.\d+)?/g);
+    if(!m||m.length!==1) return null;
+    var n=m[0], k=t.indexOf(n);
+    return {pre:t.slice(0,k),suf:t.slice(k+n.length),val:parseFloat(n.replace(/,/g,'')),dec:(n.split('.')[1]||'').length,com:n.indexOf(',')>-1,orig:t};
+  }
+  function fmt(d,v){
+    var s=v.toFixed(d.dec);
+    if(d.com){var a=s.split('.');a[0]=a[0].replace(/\B(?=(\d{3})+(?!\d))/g,',');s=a.join('.');}
+    return d.pre+s+d.suf;
+  }
+  function count(b,delay){
+    if(b._done) return; b._done=true;
+    var d=parse(b); if(!d) return;
+    b.textContent=fmt(d,0);
+    var t0=null, dur=1500;
+    setTimeout(function(){
+      requestAnimationFrame(function step(ts){
+        if(t0===null) t0=ts;
+        var p=Math.min(1,(ts-t0)/dur), e=1-Math.pow(1-p,4);
+        b.textContent=p<1?fmt(d,d.val*e):d.orig;
+        if(p<1) requestAnimationFrame(step);
+      });
+    },delay||0);
+  }
+  var cio=new IntersectionObserver(function(es){
+    es.forEach(function(e){ if(e.isIntersecting){ cio.unobserve(e.target); count(e.target,120); } });
+  },{threshold:.5});
+  $$('.pj-panel .meter b').forEach(function(b){ cio.observe(b); });
+
+  /* scroll reveal with batch stagger */
+  var sel='.sh,.xp,.pj-list,.mx,.dtable,.plate-row,.cert,.orgs article,.cm figure,.meters .meter,.nameplate,.contact .sbody,h3.sub';
+  var io=new IntersectionObserver(function(es){
+    var vis=es.filter(function(e){return e.isIntersecting;}).sort(function(a,b){
+      return (a.boundingClientRect.top-b.boundingClientRect.top)||(a.boundingClientRect.left-b.boundingClientRect.left);
+    });
+    vis.forEach(function(e,i){
+      var el=e.target, dl=Math.min(i,6)*90;
+      io.unobserve(el);
+      el.style.transitionDelay=dl+'ms';
+      el.classList.add('in');
+      var b=el.matches('.meter')?$('b',el):null;
+      if(b){ cio.unobserve(b); count(b,dl+200); }
+      setTimeout(function(){ el.classList.remove('rv','in'); el.style.transitionDelay=''; },1400+dl);
+    });
+  },{threshold:.06,rootMargin:'0px 0px -6% 0px'});
+  $$(sel).forEach(function(el){ el.classList.add('rv'); io.observe(el); });
+
+  /* sliding nav indicator */
+  var strip=$('.strip');
+  if(strip){
+    var ind=document.createElement('span'); ind.className='ind'; ind.style.opacity='0';
+    strip.insertBefore(ind,strip.firstChild);
+    var first=true;
+    var place=function(){
+      var a=$('a.on',strip);
+      if(!a){ ind.style.opacity='0'; return; }
+      if(first){ ind.style.transition='none'; }
+      ind.style.opacity='1';
+      ind.style.width=a.offsetWidth+'px';
+      ind.style.transform='translateX('+a.offsetLeft+'px)';
+      if(first){ first=false; void ind.offsetWidth; ind.style.transition=''; }
+    };
+    new MutationObserver(place).observe(strip,{attributes:true,subtree:true,attributeFilter:['class']});
+    window.addEventListener('resize',place);
+    if(document.fonts&&document.fonts.ready) document.fonts.ready.then(place);
+    var lg=$('#lang'); if(lg) lg.addEventListener('click',function(){ setTimeout(place,40); });
+    place();
+  }
+
+  /* language switch: soft cross-fade */
+  var lg2=$('#lang'), mn=$('main');
+  if(lg2&&mn) lg2.addEventListener('click',function(){
+    mn.classList.remove('lf'); void mn.offsetWidth; mn.classList.add('lf');
+    setTimeout(function(){ mn.classList.remove('lf'); },600);
+  });
+
+  /* light behind the glass */
+  ['a','b'].forEach(function(c){ var o=document.createElement('div'); o.className='orb '+c; o.setAttribute('aria-hidden','true'); document.body.appendChild(o); });
+  if(window.matchMedia&&matchMedia('(hover:hover) and (pointer:fine)').matches){
+    var sp=document.createElement('div'); sp.className='spot'; sp.setAttribute('aria-hidden','true'); document.body.appendChild(sp);
+    var tx=innerWidth*.6,ty=innerHeight*.3,x=tx,y=ty,run=false;
+    var tick=function(){
+      x+=(tx-x)*.07; y+=(ty-y)*.07;
+      sp.style.transform='translate3d('+(x-310)+'px,'+(y-310)+'px,0)';
+      if(Math.abs(tx-x)+Math.abs(ty-y)>.5) requestAnimationFrame(tick); else run=false;
+    };
+    window.addEventListener('pointermove',function(e){
+      tx=e.clientX; ty=e.clientY; sp.classList.add('on');
+      if(!run){ run=true; requestAnimationFrame(tick); }
+    },{passive:true});
+    document.addEventListener('pointerleave',function(){ sp.classList.remove('on'); });
+  }
+})();
+</script>
+</body>
+</html>
